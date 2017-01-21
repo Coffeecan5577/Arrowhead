@@ -27,12 +27,12 @@
             <kind>1</kind>
             <string>///Initialize variables
 
-dir = -1; //Represents direction for enemy
+dir = 1; //Represents direction for enemy
 movespeed = 3; //max speed
 grav = 0.2; //amount of gravity
 hsp = 0;
 vsp = 0;
-
+fearofheights = 0;
 </string>
           </argument>
         </arguments>
@@ -57,7 +57,9 @@ vsp = 0;
             <kind>1</kind>
             <string>hsp = dir * movespeed;
 vsp += grav;
+chck_pxls_below = 8;
 
+//Enemy collision
 //Horizontal Collisions
   if (place_meeting(x + hsp, y, obj_wall)) //Check for collision before we move in that space
   {
@@ -66,9 +68,7 @@ vsp += grav;
     {
       x += sign(hsp);
     }
-    hsp = 0; //stop moving if we have collided
-    
-    dir *= -1; //change direction
+    dir *= -1; //change direction if collided
   }
 
   //Vertical Collisions
@@ -80,8 +80,13 @@ vsp += grav;
         y += sign(vsp);
       }
       vsp = 0; //stop moving if we have collided
+
+        if (fearofheights) &amp;&amp; !position_meeting(x+(sprite_width/2) * dir, y+(sprite_height/2)+chck_pxls_below, obj_wall)
+          {
+            dir *= -1;
+          }
     }
-    //Enemy collision
+
   if(place_meeting(x,y,obj_player))
   {
     if (obj_player.y &lt; y - 16) //are we colliding with the player from the top.
@@ -94,6 +99,8 @@ vsp += grav;
       game_restart();
     }
   }
+  x += hsp;
+  y += vsp;
 
 </string>
           </argument>

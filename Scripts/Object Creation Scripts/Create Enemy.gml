@@ -5,3 +5,4 @@ movespeed = 3; //max speed
 grav = 0.2; //amount of gravity
 hsp = 0;
 vsp = 0;
+fearofheights = 0;

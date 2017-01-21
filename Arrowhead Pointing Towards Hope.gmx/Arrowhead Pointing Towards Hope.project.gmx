@@ -19,6 +19,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_powerup</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_enemy_nofall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_0</room>

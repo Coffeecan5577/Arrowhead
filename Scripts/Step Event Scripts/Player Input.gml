@@ -38,5 +38,5 @@ hsp = move * movespeed; //movespeed was 4
       vsp = 0; //stop moving if we have collided
     }
 
-x += hsp; //applying the speed to the object's coordinates
 y += vsp;
+x += hsp; //applying the speed to the object's coordinates

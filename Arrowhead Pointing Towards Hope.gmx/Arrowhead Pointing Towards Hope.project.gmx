@@ -11,6 +11,7 @@
     <sprite>sprites\spr_player_b</sprite>
     <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_portal</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,9 +21,11 @@
     <object>objects\obj_powerup</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
+    <object>objects\obj_portal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_0</room>
+    <room>rooms\rm_1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

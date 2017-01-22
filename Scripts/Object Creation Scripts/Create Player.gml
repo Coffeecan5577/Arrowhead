@@ -8,3 +8,10 @@ jumpspeed_normal = 7;
 jumpspeed_powerup = 10;
 
 jumpspeed = jumpspeed_normal;
+
+
+  if (global.checkpointR == room)
+  {
+    x = global.checkpointx; //player position is equal to checkpoint position.
+    y = global.checkpointy;
+  }

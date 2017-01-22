@@ -39,7 +39,7 @@ chck_pxls_below = 8;
     }
     else
     {
-      game_restart();
+      room_restart(); //restart room instead of game
     }
   }
 

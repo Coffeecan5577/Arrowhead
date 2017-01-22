@@ -39,7 +39,8 @@ chck_pxls_below = 8;
     }
     else
     {
-      room_restart(); //restart room instead of game
+      //calling a script:
+      scr_death();
     }
   }
 

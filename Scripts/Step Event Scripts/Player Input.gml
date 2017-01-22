@@ -2,6 +2,7 @@
 key_right = keyboard_check(vk_right); //Check for right key input:
 key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed
+key_down = keyboard_check(vk_down);
 
 //React to inputs:
 move = key_left + key_right;
@@ -13,7 +14,10 @@ hsp = move * movespeed; //movespeed was 4
 
   if (place_meeting(x, y + 1, obj_wall)) //Checking one pixel below our sprite
   {
-    vsp = key_jump * -jumpspeed; //Negative jump speed is upwards. Positive values are down.
+     if (key_jump)
+     {
+        vsp = -jumpspeed; //Negative jump speed is upwards. Positive values are down.
+     }
   }
 
 //Horizontal Collisions

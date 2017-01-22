@@ -13,6 +13,7 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_portal</sprite>
     <sprite>sprites\spr_checkpoint</sprite>
+    <sprite>sprites\spr_platform</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,6 +28,7 @@
     <object>objects\obj_enemy_nofall</object>
     <object>objects\obj_portal</object>
     <object>objects\obj_checkpoint</object>
+    <object>objects\obj_platform</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>

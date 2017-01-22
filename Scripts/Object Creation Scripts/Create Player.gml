@@ -15,3 +15,5 @@ jumpspeed = jumpspeed_normal;
     x = global.checkpointx; //player position is equal to checkpoint position.
     y = global.checkpointy;
   }
+
+key_down = 0;

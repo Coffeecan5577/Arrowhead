@@ -1,0 +1,5 @@
+  [user]
+    name = Cale Curry
+    email = c.curry2210@gmail.com
+  [core]
+    editor = atom -m

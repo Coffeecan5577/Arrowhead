@@ -1,6 +1,7 @@
 ///Initialize Variables
 grav = 0.2; //Gravity
 hsp = 0; //Horizontal Speed
+hsp_carry = 0;
 vsp = 0; //Vertical Speed
 movespeed = 4;
 

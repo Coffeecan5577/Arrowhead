@@ -20,16 +20,21 @@ hsp = move * movespeed; //movespeed was 4
      }
   }
 
+var hsp_final = hsp + hsp_carry;
+hsp_carry = 0;
+
 //Horizontal Collisions
-  if (place_meeting(x + hsp, y, obj_wall)) //Check for collision before we move in that space
+  if (place_meeting(x + hsp_final, y, obj_wall)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + sign(hsp), y, obj_wall))
+    while(!place_meeting(x + sign(hsp_final), y, obj_wall))
     {
-      x += sign(hsp);
+      x += sign(hsp_final);
     }
-    hsp = 0; //stop moving if we have collided
+    hsp_final = 0; //stop moving if we have collided
+    hsp = 0;
   }
+  x += hsp_final;
 
   //Vertical Collisions
     if (place_meeting(x, y + vsp, obj_wall)) //Check for collision before we move in that space

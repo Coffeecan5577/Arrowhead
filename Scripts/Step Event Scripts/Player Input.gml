@@ -13,12 +13,20 @@ hsp = move * movespeed; //movespeed was 4
   }
 
   if (place_meeting(x, y + 1, obj_wall)) //Checking one pixel below our sprite
-  {
-     if (key_jump)
-     {
-        vsp = -jumpspeed; //Negative jump speed is upwards. Positive values are down.
-     }
-  }
+    {
+       jumps = max_jumps; //set our number of jumps to 2
+    }
+
+    if (key_jump) && (jumps > 0)
+    {
+      jumps -= 1;
+      vsp =- jumpspeed;
+    }
+
+    if (key_jump) && (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))
+      {
+        vsp = -jumpspeed;
+      }
 
 var hsp_final = hsp + hsp_carry;
 hsp_carry = 0;
@@ -49,3 +57,18 @@ hsp_carry = 0;
 
 y += vsp;
 x += hsp; //applying the speed to the object's coordinates
+
+//Animation and drawing sprites based on movement:
+
+if (move != 0)
+  {
+    image_xscale = move; //set the horizontal scale of our sprite to our current direction.
+  }
+  if (place_meeting(x, y + 1, obj_wall)) //checking for floor
+  {
+    if (move != 0) sprite_index = spr_player_run; else sprite_index = spr_player_idle;
+  }
+  else
+  {
+   if (vsp < 0) sprite_index = spr_player_jump; else sprite_index = spr_player_fall; //checking if our jump speed is increasing
+  }

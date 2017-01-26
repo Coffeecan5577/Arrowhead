@@ -4,6 +4,9 @@ hsp = 0; //Horizontal Speed
 hsp_carry = 0;
 vsp = 0; //Vertical Speed
 movespeed = 4;
+jumps = 0;
+
+max_jumps = 2; //maximum number of jumps total
 
 jumpspeed_normal = 7;
 jumpspeed_powerup = 10;

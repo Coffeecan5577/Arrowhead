@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_enemy</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -101,6 +101,7 @@ sprite_index = spr_player;
 key_right = keyboard_check(vk_right); //Check for right key input:
 key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed
+key_jump_held = keyboard_check(vk_space);
 key_down = keyboard_check(vk_down);
 
 //React to inputs:
@@ -112,21 +113,25 @@ hsp = move * movespeed; //movespeed was 4
   }
 
   if (place_meeting(x, y + 1, obj_wall)) //Checking one pixel below our sprite
-  {
-     jumps = max_jumps; //set our number of jumps to 2
-  }
-  
-  if (key_jump) &amp;&amp; (jumps &gt; 0)
-  {
-    jumps -= 1;
-    vsp =- jumpspeed;
-  }
-  
-    if (key_jump) &amp;&amp; (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))
     {
-      vsp = -jumpspeed;
+       jumps = max_jumps; //set our number of jumps to 2
     }
-  
+
+    if (key_jump) &amp;&amp; (jumps &gt; 0)
+    {
+      jumps -= 1;
+      vsp =- jumpspeed;
+    }
+
+    if (key_jump) &amp;&amp; (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))
+      {
+        vsp = -jumpspeed;
+      }
+
+    if (vsp &lt; 0) &amp;&amp; (!key_jump_held)
+    {
+      vsp = max(vsp, -jumpspeed / 4);
+    }
 
 var hsp_final = hsp + hsp_carry;
 hsp_carry = 0;
@@ -160,7 +165,7 @@ x += hsp; //applying the speed to the object's coordinates
 
 //Animation and drawing sprites based on movement:
 
-  if (move != 0)
+if (move != 0)
   {
     image_xscale = move; //set the horizontal scale of our sprite to our current direction.
   }
@@ -170,10 +175,8 @@ x += hsp; //applying the speed to the object's coordinates
   }
   else
   {
-   if (vsp &lt; 0) sprite_index = spr_player_jump; else sprite_index = spr_player_fall; //checking if our jump speed is increasing 
+   if (vsp &lt; 0) sprite_index = spr_player_jump; else sprite_index = spr_player_fall; //checking if our jump speed is increasing
   }
-  
-
 
 </string>
           </argument>

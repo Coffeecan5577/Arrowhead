@@ -2,6 +2,7 @@
 key_right = keyboard_check(vk_right); //Check for right key input:
 key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed
+key_jump_held = keyboard_check(vk_space);
 key_down = keyboard_check(vk_down);
 
 //React to inputs:
@@ -27,6 +28,11 @@ hsp = move * movespeed; //movespeed was 4
       {
         vsp = -jumpspeed;
       }
+
+    if (vsp < 0) && (!key_jump_held)
+    {
+      vsp = max(vsp, -jumpspeed / 4);
+    }
 
 var hsp_final = hsp + hsp_carry;
 hsp_carry = 0;

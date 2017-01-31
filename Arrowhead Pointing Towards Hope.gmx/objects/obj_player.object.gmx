@@ -72,7 +72,7 @@ key_down = 0;
           <argument>
             <kind>1</kind>
             <string>jumpspeed = jumpspeed_normal;
-sprite_index = spr_player;
+sprite_index = spr_player_fall;
 
 //This code is set to execute when the alarm expires
 </string>
@@ -97,7 +97,13 @@ sprite_index = spr_player;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Get Player's Input:
+            <string>if (global.pause)
+{
+ exit; // exits out of the current event.
+}
+
+
+///Get Player's Input:
 key_right = keyboard_check(vk_right); //Check for right key input:
 key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed

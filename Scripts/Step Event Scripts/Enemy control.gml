@@ -1,3 +1,8 @@
+if (global.pause)
+{
+ exit; //exits out of the current event
+}
+
 hsp = dir * movespeed;
 vsp += grav;
 chck_pxls_below = 8;

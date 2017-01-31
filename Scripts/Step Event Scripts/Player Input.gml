@@ -1,4 +1,9 @@
-///Get Player's Input:
+if (global.pause)
+{
+ exit; //exits out of the current event
+}
+
+//Get Player's Input:
 key_right = keyboard_check(vk_right); //Check for right key input:
 key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed

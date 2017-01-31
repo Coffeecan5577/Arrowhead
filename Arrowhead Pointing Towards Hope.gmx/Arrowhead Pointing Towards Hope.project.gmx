@@ -40,6 +40,7 @@
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_platform</object>
     <object>objects\obj_moveplatform</object>
+    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>

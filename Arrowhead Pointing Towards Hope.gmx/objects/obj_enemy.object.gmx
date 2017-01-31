@@ -55,7 +55,12 @@ fearofheights = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = dir * movespeed;
+            <string>if (global.pause)
+{
+ exit; //exits out of the current event
+}
+
+hsp = dir * movespeed;
 vsp += grav;
 chck_pxls_below = 8;
 

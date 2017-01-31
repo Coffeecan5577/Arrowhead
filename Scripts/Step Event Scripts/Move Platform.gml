@@ -1,3 +1,8 @@
+if (global.pause)
+{
+ exit; //exits out of the current event
+}
+
 mask_index = spr_moveplatform; //Assign mask to object after creation
 hsp = dir * movespeed;
 

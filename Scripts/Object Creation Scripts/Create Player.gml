@@ -6,6 +6,9 @@ vsp = 0; //Vertical Speed
 movespeed = 4;
 jumps = 0;
 
+//Setting a deadzone for the gamepad analog sticks
+gamepad_set_axis_deadzone(0, 0.3);
+
 max_jumps = 2; //maximum number of jumps total
 
 jumpspeed_normal = 7;

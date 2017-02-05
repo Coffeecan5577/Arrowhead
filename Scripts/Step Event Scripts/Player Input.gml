@@ -4,9 +4,9 @@ if (global.pause)
 }
 
 //Get Player's Input:
-key_right = keyboard_check(vk_right); //Check for right key input:
-key_left = -keyboard_check(vk_left); //returns a negative value for the opposite direction
-key_jump = keyboard_check_pressed(vk_space); //Check if space is pressed
+key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) > 0); //Check for right key input: returns a 1 if pressed. Same applies to right side of analog stick on controller
+key_left = -(keyboard_check(vk_left) || (gamepad_axis_value(0, gp_axislh) < 0)); //returns a negative value for the opposite direction
+key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face1)); //Check if space is pressed
 key_jump_held = keyboard_check(vk_space);
 key_down = keyboard_check(vk_down);
 

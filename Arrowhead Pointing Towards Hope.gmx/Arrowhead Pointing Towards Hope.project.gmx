@@ -42,6 +42,7 @@
     <object>objects\obj_platform</object>
     <object>objects\obj_moveplatform</object>
     <object>objects\obj_pause</object>
+    <object>objects\obj_numOfPlayers</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>

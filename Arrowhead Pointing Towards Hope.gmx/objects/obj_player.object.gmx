@@ -110,7 +110,7 @@ sprite_index = spr_player_fall;
 key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) &gt; 0); //Check for right key input: returns a 1 if pressed. Same applies to right side of analog stick on controller
 key_left = -(keyboard_check(vk_left) || (gamepad_axis_value(0, gp_axislh) &lt; 0)); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face1)); //Check if space is pressed
-key_jump_held = keyboard_check(vk_space);
+key_jump_held = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
 key_down = keyboard_check(vk_down);
 
 //React to inputs:

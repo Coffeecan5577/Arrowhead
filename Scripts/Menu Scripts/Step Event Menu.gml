@@ -2,6 +2,10 @@ var move = 0;
 move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0); //takes the largest value out of the ones it's given
 move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
 
+var move_gamepad = 0; //variable for controller input. Work in progress currently
+move_gamepad -= (gamepad_button_check_pressed(0, gp_padu) > 0);
+move_gamepad += (gamepad_button_check_pressed(0, gp_padd) < 0);
+
   if (move != 0)
   {
     mpos += move; //Add to the menu position
@@ -12,6 +16,22 @@ move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0
     if (mpos > array_length_1d(menu) - 1)
     {
       mpos = 0; //move menu position back to 0
+    }
+  }
+
+  //Menu navigation with the controller. Work in progress 02/05/2017
+  //Same statement with d-pad input
+  if (move_gamepad != 0)
+  {
+    mpos += move_gamepad;
+
+    if (mpos < 0)
+    {
+        mpos = array_length_1d(menu) - 1; //length returns the number of items in a single dimensional array. No sixth index in array.
+    }
+    if (mpos > array_length_1d(menu) - 1)
+    {
+        mpos = 0; //move menu position back to 0
     }
   }
 

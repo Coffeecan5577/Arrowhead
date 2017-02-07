@@ -60,8 +60,8 @@ move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
 move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
 
 var move_gamepad = 0; //variable for controller input.
-move_gamepad -= (gamepad_button_check_pressed(0, gp_padu) &gt; 0);
-move_gamepad += (gamepad_button_check_pressed(0, gp_padd) &lt; 0);
+move_gamepad -= gamepad_button_check_pressed(0, gp_padu);
+move_gamepad += gamepad_button_check_pressed(0, gp_padd);
 
   if (move != 0)
   {
@@ -76,7 +76,7 @@ move_gamepad += (gamepad_button_check_pressed(0, gp_padd) &lt; 0);
     }
   }
   
-  //Menu navigation with the controller Work in Progress 02/05/2017
+   //Controller menu navigation fully functional 2/07/2017
   //Same statement with d-pad input
   if (move_gamepad != 0)
   {
@@ -86,10 +86,12 @@ move_gamepad += (gamepad_button_check_pressed(0, gp_padd) &lt; 0);
     {
         mpos = array_length_1d(menu) - 1; //length returns the number of items in a single dimensional array. No sixth index in array.
     }
+    
     if (mpos &gt; array_length_1d(menu) - 1)
     {
         mpos = 0; //move menu position back to 0
     }
+    
   }
   
 

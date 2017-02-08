@@ -43,8 +43,11 @@
     <object>objects\obj_moveplatform</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_numOfPlayers</object>
+    <object>objects\obj_fade_trans</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_splash1</room>
+    <room>rooms\rm_splash2</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_0</room>

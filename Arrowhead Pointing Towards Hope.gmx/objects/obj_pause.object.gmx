@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.pause = 0;
+gamepad_start = gamepad_button_check_pressed(0, gp_start);
 </string>
           </argument>
         </arguments>
@@ -83,7 +84,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause == 0)
+            <string>if (gamepad_start)
+{
+ global.pause = 0;
+}
+else
+{
+ global.pause = 1;
+}
+
+if (global.pause == 0)
   {
     global.pause = 1;
   }

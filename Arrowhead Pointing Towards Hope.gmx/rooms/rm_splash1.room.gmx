@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_fade_trans" x="352" y="256" name="inst_ACD32036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_splash_text" x="352" y="224" name="inst_92197505" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_splash_text" x="320" y="320" name="inst_92197505" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

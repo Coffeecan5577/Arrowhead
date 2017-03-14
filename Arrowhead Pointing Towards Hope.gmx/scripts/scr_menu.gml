@@ -7,7 +7,7 @@ switch (mpos) //making a switch for menu position
   }
   case 1:
   {
-    scr_loadLevel();
+    break;
   }
   case 2:
   {

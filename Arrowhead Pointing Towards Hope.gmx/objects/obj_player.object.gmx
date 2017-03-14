@@ -115,7 +115,7 @@ hsp = move * movespeed; //movespeed was 4
     vsp += grav; //gravity was 0.2
   }
 
-  if (place_meeting(x, y + 1, obj_wall)) //Checking one pixel below our sprite
+  if (place_meeting(x, y + 1, obj_ground_top_mid)) //Checking one pixel below our sprite
     {
        jumps = max_jumps; //set our number of jumps to 2
     }
@@ -126,7 +126,7 @@ hsp = move * movespeed; //movespeed was 4
       vsp =- jumpspeed;
     }
 
-    if (key_jump) &amp;&amp; (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))
+    if (key_jump) &amp;&amp; (place_meeting(x + 1, y, obj_ground_top_mid) || place_meeting(x - 1, y, obj_ground_top_mid))
       {
         vsp = -jumpspeed;
       }
@@ -140,10 +140,10 @@ var hsp_final = hsp + hsp_carry;
 hsp_carry = 0;
 
 //Horizontal Collisions
-  if (place_meeting(x + hsp_final, y, obj_wall)) //Check for collision before we move in that space
+  if (place_meeting(x + hsp_final, y, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + sign(hsp_final), y, obj_wall))
+    while(!place_meeting(x + sign(hsp_final), y, obj_ground_top_mid))
     {
       x += sign(hsp_final);
     }
@@ -153,10 +153,10 @@ hsp_carry = 0;
   x += hsp_final;
 
   //Vertical Collisions
-    if (place_meeting(x, y + vsp, obj_wall)) //Check for collision before we move in that space
+    if (place_meeting(x, y + vsp, obj_ground_top_mid)) //Check for collision before we move in that space
     {
       //If we are about to collide, slowly move up until the collision happens.
-      while(!place_meeting(x, y + sign(vsp), obj_wall))
+      while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
       {
         y += sign(vsp);
       }
@@ -165,6 +165,14 @@ hsp_carry = 0;
 
 y += vsp;
 x += hsp; //applying the speed to the object's coordinates
+  
+    //Instakill test block:
+    if (place_meeting(x, y + 1, obj_instakill))
+    {
+        scr_death();
+    } 
+
+
 
 //Animation and drawing sprites based on movement:
 
@@ -172,7 +180,7 @@ if (move != 0)
   {
     image_xscale = move; //set the horizontal scale of our sprite to our current direction.
   }
-  if (place_meeting(x, y + 1, obj_wall)) //checking for floor
+  if (place_meeting(x, y + 1, obj_ground_top_mid)) //checking for floor
   {
     if (move != 0) sprite_index = spr_player_run; else sprite_index = spr_player_idle;
   }

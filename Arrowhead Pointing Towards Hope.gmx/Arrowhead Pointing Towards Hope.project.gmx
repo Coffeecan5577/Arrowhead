@@ -27,6 +27,7 @@
     <sprite>sprites\spr_arrow_jump</sprite>
     <sprite>sprites\spr_arrow_falling</sprite>
     <sprite>sprites\spr_arrow_running</sprite>
+    <sprite>sprites\spr_pillar_bow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -56,6 +57,7 @@
     <object>objects\obj_heart</object>
     <object>objects\obj_instakill</object>
     <object>objects\obj_dirt</object>
+    <object>objects\obj_pillar_bow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

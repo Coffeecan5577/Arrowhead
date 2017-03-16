@@ -194,7 +194,12 @@ if (move != 0)
   //Idle Speed
   if(sprite_index == spr_arrow_idle)
   {
-    image_speed = 0.1;
+    image_speed = 0.05;
+    if (image_index &gt; image_number)
+    {
+        image_index = 0;
+        image_speed = 0.05;
+    }
   }
   //Running Speed:
   else if (sprite_index == spr_arrow_running)
@@ -207,12 +212,14 @@ if (move != 0)
     image_speed = 0.4;
         if (image_index == 2 &amp;&amp; image_speed &gt; 0)
         {
+            image_index = image_number - 1;
             image_speed = 0; //set speed to 0
         }
   }
   //Falling speed 
   else if (sprite_index == spr_arrow_falling)
   {
+    image_index = 0;
     image_speed = 0.2;
   }
    

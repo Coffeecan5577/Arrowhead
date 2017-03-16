@@ -9,8 +9,6 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\spr_player_fall</sprite>
-    <sprite>sprites\spr_player_idle</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_player_b</sprite>
     <sprite>sprites\spr_powerup</sprite>
@@ -19,14 +17,16 @@
     <sprite>sprites\spr_checkpoint</sprite>
     <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_moveplatform</sprite>
-    <sprite>sprites\spr_player_jump</sprite>
-    <sprite>sprites\spr_player_run</sprite>
     <sprite>sprites\spr_splash_text</sprite>
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_grass_top_mid</sprite>
     <sprite>sprites\spr_grass_left_corner</sprite>
     <sprite>sprites\spr_grass_right_corner</sprite>
     <sprite>sprites\spr_dirt</sprite>
+    <sprite>sprites\spr_arrow_idle</sprite>
+    <sprite>sprites\spr_arrow_jump</sprite>
+    <sprite>sprites\spr_arrow_falling</sprite>
+    <sprite>sprites\spr_arrow_running</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

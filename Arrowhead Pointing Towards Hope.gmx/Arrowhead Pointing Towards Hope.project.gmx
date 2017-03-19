@@ -28,6 +28,12 @@
     <sprite>sprites\spr_arrow_falling</sprite>
     <sprite>sprites\spr_arrow_running</sprite>
     <sprite>sprites\spr_pillar_bow</sprite>
+    <sprite>sprites\spr_power_meter</sprite>
+    <sprite>sprites\spr_power_meter_build</sprite>
+    <sprite>sprites\spr_arrowhead_prep</sprite>
+    <sprite>sprites\spr_arrow_aim_up_45</sprite>
+    <sprite>sprites\spr_arrow_aim_down_45</sprite>
+    <sprite>sprites\spr_bow_prep</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -43,14 +49,11 @@
     <object>objects\obj_player</object>
     <object>objects\obj_ground_top_mid</object>
     <object>objects\obj_grass_left_corner</object>
-    <object>objects\obj_grass__right_corner</object>
+    <object>objects\obj_grass_right_corner</object>
     <object>objects\obj_powerup</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
     <object>objects\obj_portal</object>
-    <object>objects\obj_checkpoint</object>
-    <object>objects\obj_platform</object>
-    <object>objects\obj_moveplatform</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_fade_trans</object>
     <object>objects\obj_splash_text</object>

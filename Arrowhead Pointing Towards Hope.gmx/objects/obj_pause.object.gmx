@@ -27,6 +27,14 @@
             <kind>1</kind>
             <string>global.pause = 0;
 gamepad_start = gamepad_button_check_pressed(0, gp_start);
+if (gamepad_start &amp;&amp; global.pause == 0)
+{
+    global.pause = 1;
+}
+else if (gamepad_start &amp;&amp; global.pause == 1)
+{
+ global.pause = 0;
+}   
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,48 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.3;
+            <string>//initialize variables first:
+
+sprite_index = spr_pillar_bow;
+image_speed = 0.1;
+
+if (place_meeting(x - 1, y, obj_player) &amp;&amp; global.key_launch_prep)
+{
+    sprite_index = spr_bow_prep; //change sprite and prep for launch.
+    image_speed = 0.2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index == spr_bow_prep &amp;&amp; image_index &gt;= 11 &amp;&amp; global.key_launch_prep &amp;&amp; image_speed &gt; 0)
+{
+    image_index = 11; //stop animation
+    image_speed = 0;
+}
+else if (sprite_index == spr_bow_prep &amp;&amp; image_index &lt;= 11 &amp;&amp; !global.key_launch_prep) //trigger or key is released
+{
+    sprite_index = spr_pillar_bow;
+    image_speed = 0.1;
+}
 </string>
           </argument>
         </arguments>

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_enemy</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -28,7 +28,6 @@
             <string>///Initialize Variables
 grav = 0.2; //Gravity
 hsp = 0; //Horizontal Speed
-hsp_carry = 0;
 vsp = 0; //Vertical Speed
 movespeed = 4;
 jumps = 0;
@@ -36,7 +35,7 @@ jumps = 0;
 //Setting a deadzone for the gamepad analog sticks
 gamepad_set_axis_deadzone(0, 0.3);
 
-max_jumps = 2; //maximum number of jumps total
+max_jumps = 1; //maximum number of jumps total
 
 jumpspeed_normal = 7;
 jumpspeed_powerup = 10;
@@ -105,11 +104,13 @@ key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) &gt; 0
 key_left = -(keyboard_check(vk_left) || (gamepad_axis_value(0, gp_axislh) &lt; 0)); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face1)); //Check if space is pressed
 key_jump_held = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
+global.key_launch_prep = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderrb);
 key_down = keyboard_check(vk_down);
 
 //React to inputs:
 move = key_left + key_right;
-hsp = move * movespeed; //movespeed was 4
+hsp = move * movespeed; //movespeed was 2
+
   if (vsp &lt; 10)
   {
     vsp += grav; //gravity was 0.2
@@ -136,35 +137,32 @@ hsp = move * movespeed; //movespeed was 4
       vsp = max(vsp, -jumpspeed / 4);
     }
 
-var hsp_final = hsp + hsp_carry;
-hsp_carry = 0;
-
 //Horizontal Collisions
-  if (place_meeting(x + hsp_final, y, obj_ground_top_mid)) //Check for collision before we move in that space
+  if (place_meeting(x + hsp, y, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + sign(hsp_final), y, obj_ground_top_mid))
+    while(!place_meeting(x + sign(hsp), y, obj_ground_top_mid))
     {
-      x += sign(hsp_final);
+      x += sign(hsp);
     }
-    hsp_final = 0; //stop moving if we have collided
     hsp = 0;
   }
-  x += hsp_final;
+  x += hsp;
+  
 
   //Vertical Collisions
     if (place_meeting(x, y + vsp, obj_ground_top_mid)) //Check for collision before we move in that space
+  {
+    //If we are about to collide, slowly move up until the collision happens.
+    while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
     {
-      //If we are about to collide, slowly move up until the collision happens.
-      while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
-      {
-        y += sign(vsp);
-      }
-      vsp = 0; //stop moving if we have collided
+      y += sign(vsp);
     }
+    vsp = 0;
+  }
+  y += vsp;
 
-y += vsp;
-x += hsp; //applying the speed to the object's coordinates
+
   
     //Instakill test block:
     if (place_meeting(x, y + 1, obj_instakill))
@@ -194,11 +192,11 @@ if (move != 0)
   //Idle Speed
   if(sprite_index == spr_arrow_idle)
   {
-    image_speed = 0.05;
+    image_speed = 0.1;
     if (image_index &gt; image_number)
     {
         image_index = 0;
-        image_speed = 0.05;
+        image_speed = 0.1;
     }
   }
   //Running Speed:
@@ -209,22 +207,64 @@ if (move != 0)
   //Jump animation speed:
   else if (sprite_index == spr_arrow_jump)
   {
-    image_speed = 0.4;
-        if (image_index == 2 &amp;&amp; image_speed &gt; 0)
-        {
-            image_index = image_number - 1;
-            image_speed = 0; //set speed to 0
-        }
+    image_speed = 0.2;
+    image_index = 0;
   }
   //Falling speed 
   else if (sprite_index == spr_arrow_falling)
   {
-    image_index = 0;
     image_speed = 0.2;
   }
    
   //End speeds block:
+  
+  //Testing out one half of the prepping animations:
+  if (place_meeting(x - 1, y, obj_pillar_bow) &amp;&amp; global.key_launch_prep)
+  {
+    sprite_index = spr_arrowhead_prep;
+    image_speed = 0.2;
+  }
+ 
 
+  
+  
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//animation end for arrow_prep
+if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index == 11 &amp;&amp; global.key_launch_prep &amp;&amp; image_speed &gt; 0)
+{
+    image_index = 11; //stop animation
+    image_speed = 0;
+}
+else if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index &lt;= 11 &amp;&amp; !global.key_launch_prep)
+{
+    image_speed = -0.2 //reverse animation
+}
+
+if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index == 0 &amp;&amp; !global.key_launch_prep)
+{
+    sprite_index = spr_arrow_idle;
+}
 </string>
           </argument>
         </arguments>

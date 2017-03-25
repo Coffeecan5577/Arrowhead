@@ -7,22 +7,12 @@ switch (mpos) //making a switch for menu position
   }
   case 1:
   {
-    break;
-  }
-  case 2:
-  {
-    break;
-  }
-  case 3:
-  {
-    game_end(); //exit game
+    game_end();
     break;
   }
   default:
   {
     break; //do nothing. Same for other cases at the moment.
   }
-
-
 }
 

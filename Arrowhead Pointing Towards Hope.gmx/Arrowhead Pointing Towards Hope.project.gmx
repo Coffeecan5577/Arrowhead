@@ -8,7 +8,7 @@
     <sound>sound\snd_bg_level</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_menu_arrow</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_player_b</sprite>
     <sprite>sprites\spr_powerup</sprite>
@@ -34,6 +34,10 @@
     <sprite>sprites\spr_arrow_aim_up_45</sprite>
     <sprite>sprites\spr_arrow_aim_down_45</sprite>
     <sprite>sprites\spr_bow_prep</sprite>
+    <sprite>sprites\spr_start_button_animate</sprite>
+    <sprite>sprites\spr_start_button_idle</sprite>
+    <sprite>sprites\spr_exit_button_animate</sprite>
+    <sprite>sprites\spr_exit_button_idle</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -61,6 +65,7 @@
     <object>objects\obj_instakill</object>
     <object>objects\obj_dirt</object>
     <object>objects\obj_pillar_bow</object>
+    <object>objects\obj_start_game_button</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

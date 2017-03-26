@@ -40,7 +40,8 @@
     <sprite>sprites\spr_exit_button_idle</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_demo</background>
+    <background>background\bg_main_menu</background>
+    <background>background\bg_level1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -75,8 +76,6 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_0</room>
-    <room>rooms\rm_1</room>
-    <room>rooms\rm_2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

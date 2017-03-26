@@ -1,4 +1,4 @@
-switch (mpos) //making a switch for menu position
+switch (global.mpos) //making a switch for menu position
 {
   case 0:
   {

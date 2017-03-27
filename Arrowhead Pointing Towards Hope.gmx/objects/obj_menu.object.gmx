@@ -41,11 +41,11 @@ var key_start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed
   //Beginning of Start Demo button chunk:
   // Start the arrow at start game button location
  
-  //If arrow is over start demo button and no longer moving and right is pressed:
+  //If arrow is over start demo button:
   if (global.mpos == 0 &amp;&amp; move_right || move_gamepad_right || move_left || move_gamepad_left)
   {
     global.mpos = 1;
-    action_move_to(obj_exit_game_button.x + 100, obj_exit_game_button.y + 80);
+    action_move_to(832, 416);
   }
   //End Start Demo Button Chunk
   
@@ -54,7 +54,7 @@ var key_start = keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed
   if (global.mpos == 1 &amp;&amp; move_right || move_gamepad_right || move_left || move_gamepad_left)
   {
     global.mpos = 0;
-    action_move_to(obj_start_game_button.x + 100, obj_start_game_button.y + 80);
+    action_move_to(320, 416);
   }
   //End Exit Game button chunk
   

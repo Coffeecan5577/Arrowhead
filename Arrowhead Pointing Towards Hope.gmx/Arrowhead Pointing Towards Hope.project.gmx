@@ -38,6 +38,8 @@
     <sprite>sprites\spr_start_button_idle</sprite>
     <sprite>sprites\spr_exit_button_animate</sprite>
     <sprite>sprites\spr_exit_button_idle</sprite>
+    <sprite>sprites\spr_tree_right</sprite>
+    <sprite>sprites\spr_tree_left</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
@@ -70,6 +72,8 @@
     <object>objects\obj_pillar_bow</object>
     <object>objects\obj_start_game_button</object>
     <object>objects\obj_exit_game_button</object>
+    <object>objects\obj_tree_right</object>
+    <object>objects\obj_tree_left</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

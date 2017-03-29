@@ -141,9 +141,9 @@ hsp = move * movespeed; //movespeed was 2
   if (place_meeting(x + hsp, y, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + sign(hsp), y, obj_ground_top_mid))
+    while(!place_meeting(x + (hsp), y, obj_ground_top_mid))
     {
-      x += sign(hsp);
+      x += (hsp);
     }
     hsp = 0;
   }
@@ -154,9 +154,9 @@ hsp = move * movespeed; //movespeed was 2
     if (place_meeting(x, y + vsp, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
+    while(!place_meeting(x, y + (vsp), obj_ground_top_mid))
     {
-      y += sign(vsp);
+      y += (vsp);
     }
     vsp = 0;
   }
@@ -228,43 +228,6 @@ if (move != 0)
 
   
   
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//animation end for arrow_prep
-if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index == 11 &amp;&amp; global.key_launch_prep &amp;&amp; image_speed &gt; 0)
-{
-    image_index = 11; //stop animation
-    image_speed = 0;
-}
-else if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index &lt;= 11 &amp;&amp; !global.key_launch_prep)
-{
-    image_speed = -0.2 //reverse animation
-}
-
-if (sprite_index == spr_arrowhead_prep &amp;&amp; image_index == 0 &amp;&amp; !global.key_launch_prep)
-{
-    sprite_index = spr_arrow_idle;
-}
 </string>
           </argument>
         </arguments>

@@ -2,7 +2,7 @@ switch (global.mpos) //making a switch for menu position
 {
   case 0:
   {
-    room_goto_next();
+    instance_create(0, 0, obj_level_fade);
     break;
   }
   case 1:

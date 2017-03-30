@@ -93,11 +93,7 @@ sprite_index = spr_player_fall;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause)
-{
- exit; // exits out of the current event.
-}
-
+            <string>
 
 ///Get Player's Input:
 key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) &gt; 0); //Check for right key input: returns a 1 if pressed. Same applies to right side of analog stick on controller
@@ -106,6 +102,17 @@ key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, 
 key_jump_held = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
 global.key_launch_prep = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderrb);
 key_down = keyboard_check(vk_down);
+gamepad_start = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start);
+if (gamepad_start)
+{
+    global.pause = 1;
+    room_goto(rm_pause_room);
+    exit;
+}
+else
+{
+    global.pause = 0;
+}
 
 //React to inputs:
 move = key_left + key_right;

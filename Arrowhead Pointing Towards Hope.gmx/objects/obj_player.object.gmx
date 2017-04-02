@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_grass_top_mid</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -106,10 +106,11 @@ gamepad_start = keyboard_check_pressed(vk_escape) || gamepad_button_check_presse
 if (gamepad_start)
 {
     global.pause = 1;
+    room_set_persistent(rm_0, true);
     room_goto(rm_pause_room);
     exit;
 }
-else
+else if (gamepad_start &amp;&amp; global.pause == 1)
 {
     global.pause = 0;
 }
@@ -132,6 +133,7 @@ hsp = move * movespeed; //movespeed was 2
     {
       jumps -= 1;
       vsp =- jumpspeed;
+      audio_play_sound(snd_jump, 0, false);
     }
 
     if (key_jump) &amp;&amp; (place_meeting(x + 1, y, obj_ground_top_mid) || place_meeting(x - 1, y, obj_ground_top_mid))
@@ -143,14 +145,18 @@ hsp = move * movespeed; //movespeed was 2
     {
       vsp = max(vsp, -jumpspeed / 4);
     }
+    if (vsp &gt; 0 &amp;&amp; jumps &gt; 0)
+    {
+        jumps = 0; //if we fall off a ledge and have not jumped, do not let the player jump.
+    }
 
 //Horizontal Collisions
   if (place_meeting(x + hsp, y, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + (hsp), y, obj_ground_top_mid))
+    while(!place_meeting(x + sign(hsp) , y, obj_ground_top_mid))
     {
-      x += (hsp);
+      x += sign(hsp);
     }
     hsp = 0;
   }
@@ -161,9 +167,9 @@ hsp = move * movespeed; //movespeed was 2
     if (place_meeting(x, y + vsp, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x, y + (vsp), obj_ground_top_mid))
+    while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
     {
-      y += (vsp);
+      y += sign(vsp);
     }
     vsp = 0;
   }
@@ -223,15 +229,15 @@ if (move != 0)
     image_speed = 0.2;
   }
    
-  //End speeds block:
+  //Testing out sound and death parts:
+  //If Arrowhead collides with the instakill object, stop the background music
+  //, set an alarm, and when that alarm goes off, play some kind of death jingle.
   
-  //Testing out one half of the prepping animations:
-  if (place_meeting(x - 1, y, obj_pillar_bow) &amp;&amp; global.key_launch_prep)
-  {
-    sprite_index = spr_arrowhead_prep;
-    image_speed = 0.2;
-  }
- 
+  //Next, we want an instance of the fade object to be created after the jingle is done
+  //playing, that way the level restarts.
+  
+  //Need to establish health system first and foremost.
+  
 
   
   

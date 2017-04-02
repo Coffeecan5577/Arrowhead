@@ -6,6 +6,12 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_bg_level</sound>
+    <sound>sound\snd_bg_menu</sound>
+    <sound>sound\snd_jump</sound>
+    <sound>sound\snd_option_select</sound>
+    <sound>sound\snd_game_start</sound>
+    <sound>sound\snd_splash_jingle</sound>
+    <sound>sound\snd_pause_menu</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_menu_arrow</sprite>
@@ -47,6 +53,7 @@
     <sprite>sprites\spr_exit_button_idle</sprite>
     <sprite>sprites\spr_tree_right</sprite>
     <sprite>sprites\spr_tree_left</sprite>
+    <sprite>sprites\spr_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
@@ -90,6 +97,9 @@
     <object>objects\obj_exit_game_button</object>
     <object>objects\obj_tree_right</object>
     <object>objects\obj_tree_left</object>
+    <object>objects\obj_title</object>
+    <object>objects\obj_snd_level</object>
+    <object>objects\obj_snd_pause_music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

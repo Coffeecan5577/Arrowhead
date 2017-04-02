@@ -54,7 +54,8 @@
     <instance objName="obj_resume_game_button" x="192" y="384" name="inst_62B77E2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_main_menu_button" x="512" y="384" name="inst_3C98C3D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_exit_demo_button" x="832" y="384" name="inst_9D322086" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pause_menu" x="288" y="416" name="inst_0E05B9A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause_menu" x="288" y="448" name="inst_0E05B9A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snd_pause_music" x="32" y="0" name="inst_6150281E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

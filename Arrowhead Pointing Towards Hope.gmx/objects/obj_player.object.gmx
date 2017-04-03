@@ -93,26 +93,33 @@ sprite_index = spr_player_fall;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-///Get Player's Input:
+            <string>///Get Player's Input:
+var player_input = true; //determines whether or not we can move
+if (player_input == true)
+{
 key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) &gt; 0); //Check for right key input: returns a 1 if pressed. Same applies to right side of analog stick on controller
 key_left = -(keyboard_check(vk_left) || (gamepad_axis_value(0, gp_axislh) &lt; 0)); //returns a negative value for the opposite direction
 key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face1)); //Check if space is pressed
 key_jump_held = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
+}
+else
+{
+    //disable player input
+}
+
 global.key_launch_prep = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderrb);
 key_down = keyboard_check(vk_down);
 gamepad_start = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start);
 if (gamepad_start)
 {
     global.pause = 1;
-    room_set_persistent(rm_0, true);
     room_goto(rm_pause_room);
     exit;
 }
 else if (gamepad_start &amp;&amp; global.pause == 1)
 {
     global.pause = 0;
+    room_goto(rm_0);
 }
 
 //React to inputs:
@@ -174,17 +181,8 @@ hsp = move * movespeed; //movespeed was 2
     vsp = 0;
   }
   y += vsp;
-
-
   
-    //Instakill test block:
-    if (place_meeting(x, y + 1, obj_instakill))
-    {
-        scr_death(); //call death script for test.
-    } 
-
-
-
+  
 //Animation and drawing sprites based on movement:
 
 if (move != 0)
@@ -236,7 +234,13 @@ if (move != 0)
   //Next, we want an instance of the fade object to be created after the jingle is done
   //playing, that way the level restarts.
   
-  //Need to establish health system first and foremost.
+  
+    //Instakill test block:
+    if (place_meeting(x, y + 1, obj_instakill))
+    {
+        instance_destroy(); //destroy player.
+        scr_death(); //call death script for test.
+    }
   
 
   

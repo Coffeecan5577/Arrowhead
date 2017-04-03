@@ -12,18 +12,13 @@
     <sound>sound\snd_game_start</sound>
     <sound>sound\snd_splash_jingle</sound>
     <sound>sound\snd_pause_menu</sound>
+    <sound>sound\snd_arrow_death</sound>
+    <sound>sound\snd_death_jingle</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_menu_arrow</sprite>
     <sprite>sprites\spr_pause_menu_arrow</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_player_b</sprite>
-    <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_portal</sprite>
-    <sprite>sprites\spr_checkpoint</sprite>
-    <sprite>sprites\spr_platform</sprite>
-    <sprite>sprites\spr_moveplatform</sprite>
     <sprite>sprites\spr_splash_text</sprite>
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_grass_top_mid</sprite>
@@ -54,11 +49,12 @@
     <sprite>sprites\spr_tree_right</sprite>
     <sprite>sprites\spr_tree_left</sprite>
     <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_instakill</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
     <background>background\bg_pause_menu</background>
-    <background>background\bg_level1</background>
+    <background>background\bg_pillars</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -76,10 +72,8 @@
     <object>objects\obj_ground_top_mid</object>
     <object>objects\obj_grass_left_corner</object>
     <object>objects\obj_grass_right_corner</object>
-    <object>objects\obj_powerup</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
-    <object>objects\obj_portal</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_menu_fade</object>
     <object>objects\obj_level_fade</object>
@@ -100,6 +94,7 @@
     <object>objects\obj_title</object>
     <object>objects\obj_snd_level</object>
     <object>objects\obj_snd_pause_music</object>
+    <object>objects\obj_death_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

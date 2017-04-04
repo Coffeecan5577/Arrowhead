@@ -50,6 +50,8 @@
     <sprite>sprites\spr_tree_left</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_instakill</sprite>
+    <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_arrow_damage_fall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
@@ -95,6 +97,7 @@
     <object>objects\obj_snd_level</object>
     <object>objects\obj_snd_pause_music</object>
     <object>objects\obj_death_controller</object>
+    <object>objects\obj_health</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

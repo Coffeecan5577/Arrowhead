@@ -31,6 +31,7 @@ hsp = 0; //Horizontal Speed
 vsp = 0; //Vertical Speed
 movespeed = 4;
 jumps = 0;
+global.num_of_hits = 0; //health
 
 //Setting a deadzone for the gamepad analog sticks
 gamepad_set_axis_deadzone(0, 0.3);
@@ -235,12 +236,27 @@ if (move != 0)
   //playing, that way the level restarts.
   
   
-    //Instakill test block:
+    //Testing death
     if (place_meeting(x, y + 1, obj_instakill))
     {
         instance_destroy(); //destroy player.
         scr_death(); //call death script for test.
     }
+    else if (global.num_of_hits == 3)
+    {
+        instance_destroy();
+        scr_death();   
+        //play death animation once it is made
+    }
+    
+    //Damage animations applied in enemy code.
+    //now for reverting back to the idle animation.
+    if(sprite_index == spr_arrow_damage_fall &amp;&amp; image_speed &gt; 0 &amp;&amp; image_index == 6 &amp;&amp; place_meeting(x, y + 1, obj_ground_top_mid))
+    {
+        sprite_index = spr_arrow_idle;
+    }
+    
+  //Health chunk
   
 
   

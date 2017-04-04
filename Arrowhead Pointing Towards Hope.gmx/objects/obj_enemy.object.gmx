@@ -55,21 +55,17 @@ fearofheights = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause)
-{
- exit; //exits out of the current event
-}
-
+            <string>
 hsp = dir * movespeed;
 vsp += grav;
 chck_pxls_below = 8;
 
 //Enemy collision
 //Horizontal Collisions
-  if (place_meeting(x + hsp, y, obj_wall)) //Check for collision before we move in that space
+  if (place_meeting(x + hsp, y, obj_ground_top_mid)) //Check for collision before we move in that space
   {
     //If we are about to collide, slowly move up until the collision happens.
-    while(!place_meeting(x + sign(hsp), y, obj_wall))
+    while(!place_meeting(x + sign(hsp), y, obj_ground_top_mid))
     {
       x += sign(hsp);
     }
@@ -77,16 +73,16 @@ chck_pxls_below = 8;
   }
 
   //Vertical Collisions
-    if (place_meeting(x, y + vsp, obj_wall)) //Check for collision before we move in that space
+    if (place_meeting(x, y + vsp, obj_ground_top_mid)) //Check for collision before we move in that space
     {
       //If we are about to collide, slowly move up until the collision happens.
-      while(!place_meeting(x, y + sign(vsp), obj_wall))
+      while(!place_meeting(x, y + sign(vsp), obj_ground_top_mid))
       {
         y += sign(vsp);
       }
       vsp = 0; //stop moving if we have collided
 
-        if (fearofheights) &amp;&amp; !position_meeting(x+(sprite_width/2) * dir, y+(sprite_height/2)+chck_pxls_below, obj_wall)
+        if (fearofheights) &amp;&amp; !position_meeting(x+(sprite_width/2) * dir, y+(sprite_height/2)+chck_pxls_below, obj_ground_top_mid)
           {
             dir *= -1;
           }
@@ -98,11 +94,38 @@ chck_pxls_below = 8;
     {
       with (obj_player) vsp = -jumpspeed; //bounce off the enemy
       instance_destroy(); //kill the object
+      //play an enemy death sound
     }
     else
     {
       //calling a script:
-      scr_death();
+      with (obj_player)
+      {
+        if (move == 1 &amp;&amp; global.num_of_hits &lt;= 2)
+        {
+            hsp = -3;
+            vsp = 4;
+            sprite_index = spr_arrow_damage_fall;
+            image_speed = 0.2;
+            global.num_of_hits += 1;
+        }
+        else if (move == -1 &amp;&amp; global.num_of_hits &lt;= 2)
+        {
+            hsp = 3;
+            vsp = 4;
+            sprite_index = spr_arrow_damage_fall;
+            image_speed = 0.2;
+            global.num_of_hits += 1;
+        }
+        else if (move == 0 &amp;&amp; global.num_of_hits &lt;= 2)
+        {
+            hsp = -3;
+            vsp = 4;
+            sprite_index = spr_arrow_damage_fall;
+            image_speed = 0.2;
+            global.num_of_hits += 1;
+        }
+      }
     }
   }
   x += hsp;

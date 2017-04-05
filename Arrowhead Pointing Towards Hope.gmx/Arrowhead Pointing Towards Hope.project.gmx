@@ -14,6 +14,7 @@
     <sound>sound\snd_pause_menu</sound>
     <sound>sound\snd_arrow_death</sound>
     <sound>sound\snd_death_jingle</sound>
+    <sound>sound\snd_dmg_impact</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_menu_arrow</sprite>

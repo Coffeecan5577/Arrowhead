@@ -31,6 +31,7 @@ hsp = 0; //Horizontal Speed
 vsp = 0; //Vertical Speed
 movespeed = 4;
 jumps = 0;
+dir = 1; //indicates which way Arrowhead is facing based on move value
 global.num_of_hits = 0; //health
 
 //Setting a deadzone for the gamepad analog sticks
@@ -126,6 +127,14 @@ else if (gamepad_start &amp;&amp; global.pause == 1)
 //React to inputs:
 move = key_left + key_right;
 hsp = move * movespeed; //movespeed was 2
+if (key_right)
+{
+    dir = 1;
+}
+else if (key_left)
+{
+    dir = -1;
+}
 
   if (vsp &lt; 10)
   {
@@ -227,6 +236,12 @@ if (move != 0)
   {
     image_speed = 0.2;
   }
+  //Damage animation speed
+  else if (sprite_index == spr_arrow_damage_fall)
+  {
+    image_speed = 0.3;
+  }
+  
    
   //Testing out sound and death parts:
   //If Arrowhead collides with the instakill object, stop the background music
@@ -239,28 +254,63 @@ if (move != 0)
     //Testing death
     if (place_meeting(x, y + 1, obj_instakill))
     {
+        global.num_of_hits = 3;
         instance_destroy(); //destroy player.
         scr_death(); //call death script for test.
+        player_input = false;
+        
     }
     else if (global.num_of_hits == 3)
     {
         instance_destroy();
         scr_death();   
         //play death animation once it is made
+        player_input = false;
     }
     
     //Damage animations applied in enemy code.
-    //now for reverting back to the idle animation.
-    if(sprite_index == spr_arrow_damage_fall &amp;&amp; image_speed &gt; 0 &amp;&amp; image_index == 6 &amp;&amp; place_meeting(x, y + 1, obj_ground_top_mid))
+    //now for reverting back to the idle animation.\
+    /*
+    if (sprite_index == spr_arrow_damage_fall &amp;&amp; image_index == 6 &amp;&amp; image_speed &gt; 0)
+    {
+        image_speed = 0;
+    }
+    
+    if(sprite_index == spr_arrow_damage_fall &amp;&amp; image_speed &gt; 0 &amp;&amp; image_speed == 0)
     {
         sprite_index = spr_arrow_idle;
     }
-    
+    */
   //Health chunk
   
 
   
   
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_enemy_nofall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_dmg_impact, 0, false);
+global.num_of_hits += 1; //add one to number of hits and change image index   
+
 </string>
           </argument>
         </arguments>

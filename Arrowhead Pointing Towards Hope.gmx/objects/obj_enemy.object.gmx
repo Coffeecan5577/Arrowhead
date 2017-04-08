@@ -3,7 +3,7 @@
   <spriteName>spr_enemy</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_enemy_mask</maskName>
@@ -61,7 +61,6 @@ hsp = dir * movespeed;
 vsp += grav;
 chck_pxls_below = 8;
 image_speed = 0.3;
-image_xscale = dir;
 
 //Enemy collision
 //Horizontal Collisions
@@ -103,6 +102,11 @@ image_xscale = dir;
       movespeed = 0; //stop moving
       hsp = 0;
       instance_change(obj_enemy_dup, false);
+      with (obj_enemy_dup)
+      {
+        sprite_index = spr_enemy_death;
+        image_speed = 1;
+      }
     }
   }
 x += hsp;
@@ -137,7 +141,7 @@ instance_change(obj_enemy_dup, false);
 with(obj_enemy_dup)
 {
     sprite_index = spr_enemy_death;
-    image_speed = 1.2;
+    image_speed = 1;
 }
 
 </string>

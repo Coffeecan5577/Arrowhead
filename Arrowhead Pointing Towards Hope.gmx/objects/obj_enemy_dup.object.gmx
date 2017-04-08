@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (sprite_index == spr_enemy_death &amp; image_inex == image_number - 1)
+            <string>if (sprite_index == spr_enemy_death)
 {
     instance_destroy();
 }

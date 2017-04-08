@@ -15,6 +15,8 @@
     <sound>sound\snd_arrow_death</sound>
     <sound>sound\snd_death_jingle</sound>
     <sound>sound\snd_dmg_impact</sound>
+    <sound>sound\snd_powerup</sound>
+    <sound>sound\snd_enemy_death</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_menu_arrow</sprite>
@@ -53,6 +55,9 @@
     <sprite>sprites\spr_instakill</sprite>
     <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_arrow_damage_fall</sprite>
+    <sprite>sprites\spr_enemy_death</sprite>
+    <sprite>sprites\spr_string</sprite>
+    <sprite>sprites\spr_enemy_mask</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
@@ -76,6 +81,7 @@
     <object>objects\obj_grass_left_corner</object>
     <object>objects\obj_grass_right_corner</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_enemy_dup</object>
     <object>objects\obj_enemy_nofall</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_menu_fade</object>
@@ -99,6 +105,7 @@
     <object>objects\obj_snd_pause_music</object>
     <object>objects\obj_death_controller</object>
     <object>objects\obj_health</object>
+    <object>objects\obj_string</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash1</room>

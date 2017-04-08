@@ -283,6 +283,8 @@ if (move != 0)
     */
   //Health chunk
   
+  //collison enemy check
+  
 
   
   
@@ -291,7 +293,7 @@ if (move != 0)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_enemy_nofall">
+    <event eventtype="4" ename="obj_enemy">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -309,7 +311,6 @@ if (move != 0)
           <argument>
             <kind>1</kind>
             <string>audio_play_sound(snd_dmg_impact, 0, false);
-global.num_of_hits += 1; //add one to number of hits and change image index   
 
 </string>
           </argument>

@@ -1,0 +1,1 @@
+audio_play_sound(snd_splash_jingle, 0, false);

@@ -1,0 +1,1 @@
+room_goto_next(); //go to the next room after variables are initialized

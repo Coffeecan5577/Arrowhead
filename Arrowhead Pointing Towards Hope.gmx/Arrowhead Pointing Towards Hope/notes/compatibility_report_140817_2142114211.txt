@@ -1,0 +1,75 @@
+Converting GML script : ${project_dir}\objects\obj_enemy\Create_0.gml
+Converted description : /// @description Initialize variables
+
+Converting GML script : ${project_dir}\objects\obj_level_fade\Draw_0.gml
+Converted builtin : line 27 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 29 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 28 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 30 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 29 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 30 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\objects\obj_menu_fade\Draw_0.gml
+Converted builtin : line 27 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 29 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 28 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 30 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 29 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 30 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\objects\obj_restart_level_fade\Draw_0.gml
+Converted builtin : line 27 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 29 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 28 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 30 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 29 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 30 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Font fnt_menu has been converted to font family Power Green (Regular). Font has been regenerated, small inconsistencies may occur.
+Converting GML script : ${project_dir}\objects\obj_return_main_menu\Draw_0.gml
+Converted builtin : line 27 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 29 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 28 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 30 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin : line 29 : view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin : line 30 : view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script : ${project_dir}\objects\obj_health\Step_0.gml
+Converted builtin : line 27 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 28 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\objects\obj_health\Draw_0.gml
+Converted builtin : line 1 : view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin : line 1 : view_yview[0] -> __view_get( e__VW.YView, 0 )
+
+Converting GML script : ${project_dir}\objects\obj_player\Create_0.gml
+Converted description : /// @description Initialize Variables
+
+Converting GML script : ${project_dir}\objects\obj_player\Step_0.gml
+Converted description : /// @description Get Player's Input:
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2.
+no audiogroup for sound: snd_game_start - setting to default audio group.
+no audiogroup for sound: snd_bg_menu - setting to default audio group.
+no audiogroup for sound: snd_pause_menu - setting to default audio group.
+no audiogroup for sound: snd_enemy_death - setting to default audio group.
+no audiogroup for sound: snd_option_select - setting to default audio group.
+no audiogroup for sound: snd_splash_jingle - setting to default audio group.
+no audiogroup for sound: snd_dmg_impact - setting to default audio group.
+no audiogroup for sound: snd_arrowtip_collect - setting to default audio group.
+no audiogroup for sound: snd_bg_level - setting to default audio group.
+no audiogroup for sound: snd_jump - setting to default audio group.
+no audiogroup for sound: snd_arrow_death - setting to default audio group.
+no audiogroup for sound: snd_death_jingle - setting to default audio group.
+no audiogroup for sound: snd_powerup - setting to default audio group.
+game speed set to 60
+added compatibility script action/action_inherited.gml
+added compatibility script action/action_move_to.gml
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script view/__view_get.gml
+added compatibility script action/__init_action.gml
+added compatibility script view/__init_view.gml
+added compatibility script __init_global.gml
+added compatibility script __global_object_depths.gml

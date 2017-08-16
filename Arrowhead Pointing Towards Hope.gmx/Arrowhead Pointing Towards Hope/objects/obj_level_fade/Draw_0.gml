@@ -11,7 +11,7 @@ if (trans_time == 0) //If our wait time is up, then draw rectangle
     //clamp takes a variable value and restricts it between to preset values. In our case less than 1 but greater than 0.
     if (a == 1 && trans_time == 0) //if rectangle is fully drawn, or solid black
     {
-      room_goto(rm_0);
+      room_goto(rm_test_lvl);
       fade = -1;
     }
     

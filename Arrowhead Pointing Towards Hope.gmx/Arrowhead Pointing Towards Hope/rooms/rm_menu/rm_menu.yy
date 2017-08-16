@@ -211,7 +211,7 @@
             "animationFPS": 15,
             "animationSpeedType": 0,
             "colour": {
-                "Value": 4294967295
+                "Value": 4285216788
             },
             "hspeed": 0,
             "htiled": false,

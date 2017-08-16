@@ -1,7 +1,13 @@
 /// @description initialize variables
 max_spd = 10;
-accel_spd = l;
+accel_spd = 1;
 decel_spd = 2;
+
+//local variables for the horizontal and vertical speeds.
+hsp = hspeed;
+vsp = vspeed;
+mvmt = false; //for sprite and movement tests
+dir = 1; //Facing right by default.
 
 //Gamepad button names
 gpad_A = gp_face1;

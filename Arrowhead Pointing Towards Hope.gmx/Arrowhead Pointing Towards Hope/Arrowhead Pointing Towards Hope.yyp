@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "643bfa04-6f60-476e-a0e7-128b5e42a079",
+            "Value": {
+                "id": "4c02f562-d24c-47dc-bc74-d2e2b314741e",
+                "resourcePath": "objects\\obj_lvl_tile\\obj_lvl_tile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "66133c9d-6cb8-4089-a3b3-c3695dee23a0",
             "Value": {
                 "id": "b5de0e99-176d-4cf0-8345-d44e76ff1623",
@@ -531,6 +539,14 @@
             "Value": {
                 "id": "e9b0852e-d289-4d1b-842b-0afbb735dda5",
                 "resourcePath": "sprites\\spr_power_meter\\spr_power_meter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "75187654-5313-4e32-9706-51fdcca84e9b",
+            "Value": {
+                "id": "269f8f63-e622-4a48-bf89-b171ad5b2840",
+                "resourcePath": "sprites\\spr_lvl_tile\\spr_lvl_tile.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1106,7 +1122,7 @@
             "Key": "e6d144fa-1d50-4fab-ba80-4899acc88910",
             "Value": {
                 "id": "10f942b9-4cad-4e9d-bbd2-fc88bed9cf42",
-                "resourcePath": "objects\\obj_tile\\obj_tile.yy",
+                "resourcePath": "objects\\obj_ground_parent\\obj_ground_parent.yy",
                 "resourceType": "GMObject"
             }
         },

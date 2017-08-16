@@ -3,6 +3,11 @@ max_spd = 10;
 accel_spd = 1;
 decel_spd = 2;
 
+//jump variables
+jump_spd = 15;
+grav = 1; //gravity and max gravity subject to change later
+grav_max = 10;
+
 //local variables for the horizontal and vertical speeds.
 hsp = hspeed;
 vsp = vspeed;

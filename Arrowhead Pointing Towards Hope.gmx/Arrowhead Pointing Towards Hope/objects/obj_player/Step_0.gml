@@ -40,6 +40,19 @@ else
 }
 
 //No need to modify vspeed for a platformer.
+
+//sprite animtion section
+if (mvmt == false)
+{
+	sprite_index = spr_arrow_idle;
+	image_speed = 0.3;
+}
+
+if (mvmt)
+{
+	sprite_index = spr_arrow_running;
+	image_speed = 0.4;
+}
  
  
 

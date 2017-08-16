@@ -1,17 +1,43 @@
 /// @description Get Player's Input:
-var player_input = true; //determines whether or not we can move
-if (player_input == true)
+
+///Player Movement (Keyboard)
+if (keyboard_check(ord("D")) && !keyboard_check(ord("A")))
 {
-key_right = keyboard_check(vk_right) || (gamepad_axis_value(0, gp_axislh) > 0); //Check for right key input: returns a 1 if pressed. Same applies to right side of analog stick on controller
-key_left = -(keyboard_check(vk_left) || (gamepad_axis_value(0, gp_axislh) < 0)); //returns a negative value for the opposite direction
-key_jump = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face1)); //Check if space is pressed
-key_jump_held = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
-}
-else
-{
-    //disable player input
+	hspeed += accel_spd;
+	hspeed = min(hspeed, max_spd);
 }
 
+if (hspeed > 0) && !(keyboard_check(ord("D")))
+{
+	hspeed -= decel_spd;
+}
+
+if (keyboard_check(ord("A"))) && !(keyboard_check(ord("D")))
+{
+	hspeed -= accel_spd;
+	hspeed = max(hspeed, -max_spd);
+}
+
+if (hspeed < 0) && !(keyboard_check(ord("A")))
+{
+	hspeed += decel_spd;
+}
+
+if ((keyboard_check(ord("A"))) && (keyboard_check(ord("D"))) || !(keyboard_check(ord("A"))) && !(keyboard_check(ord("D"))))
+{
+	hspeed = 0;
+}
+
+//Controller joystick movement
+
+if (gamepad_axis_value(0, gp_axislh) > 0.2) || (gamepad_axis_value(0, gp_axislh) < (-0.2)) //finish up later
+{
+
+}
+
+
+
+/*
 global.key_launch_prep = keyboard_check(vk_shift) || gamepad_button_check(0, gp_shoulderrb);
 key_down = keyboard_check(vk_down);
 gamepad_start = keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start);
@@ -26,6 +52,9 @@ else if (gamepad_start && global.pause == 1)
     global.pause = 0;
     room_goto(rm_0);
 }
+
+Pause menu and launch prep inputs. Don't need these yet.
+*/ 
 
 //React to inputs:
 move = key_left + key_right;

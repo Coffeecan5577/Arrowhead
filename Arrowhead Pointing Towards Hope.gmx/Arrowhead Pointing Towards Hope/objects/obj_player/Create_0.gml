@@ -11,7 +11,6 @@ grav_max = 10;
 //local variables for the horizontal and vertical speeds.
 hsp = hspeed;
 vsp = vspeed;
-mvmt = false; //for sprite and movement tests
 dir = 1; //Facing right by default.
 
 //Gamepad button names

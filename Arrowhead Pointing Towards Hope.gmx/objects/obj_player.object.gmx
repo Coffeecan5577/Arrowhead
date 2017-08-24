@@ -275,7 +275,7 @@ if (move != 0)
   
   
     //Testing death
-    if (place_meeting(x, y + 1, obj_instakill))
+    if (place_meeting(x, y + 1, obj_instakill) || place_meeting(x + 1, y, obj_instakill) || place_meeting(x - 1, y, obj_instakill))
     {
         global.num_of_hits = 3;
         instance_destroy(); //destroy player.

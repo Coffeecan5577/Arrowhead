@@ -1,7 +1,8 @@
 /// @description initialize variables
-max_spd = 10;
+max_spd = 7;
 accel_spd = 1;
 decel_spd = 2;
+dir = direction; //facing right by default.
 
 //jump variables
 jump_spd = 15;

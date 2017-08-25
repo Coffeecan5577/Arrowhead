@@ -1,40 +1,33 @@
 /// @description Get Player's Input:
 
-	//Player Movement (Keyboard)
-	if (keyboard_check_pressed(vk_right) && !keyboard_check_pressed(vk_left))
-	{
-		dir = 1;
-		hsp += accel_spd;
-		hsp = min(hsp, max_spd);
-		//TODO: Increase speed of running animation to top speed
-	}
-	
-	if (hsp > 0) && !(keyboard_check_pressed(vk_right))
-	{
-		hsp -= decel_spd;
-		//TODO: Slow down running animation to idle.
-	}
+//Movement Controls (Keyboard)
+if (keyboard_check(vk_right)) && !(keyboard_check(vk_left))
+{
+	dir = 1;
+	hsp += accel_spd;
+	hsp = min(hsp, max_spd);
+}
 
+if (hsp > 0) && !(keyboard_check(vk_right))
+{
+	hsp -= decel_spd;
+}
 
-
-
-if (keyboard_check_pressed(vk_left)) && !(keyboard_check_pressed(vk_right))
+if (keyboard_check(vk_left)) && !(keyboard_check(vk_right))
 {
 	dir = -1;
 	hsp -= accel_spd;
 	hsp = max(hsp, -max_spd);
-	//TODO: Increase speed of running animation to top speed
 }
 
-if (hsp < 0) && !(keyboard_check_pressed(vk_left))
+if (hsp < 0) && !(keyboard_check(vk_left))
 {
 	hsp += decel_spd;
-	//TODO: Slow down running animation to idle.
 }
 
-if ((keyboard_check_pressed(vk_left)) && (keyboard_check_pressed(vk_right)) || !(keyboard_check_pressed(vk_left)) && !(keyboard_check_pressed(vk_right)))
+if ((keyboard_check(vk_left)) && (keyboard_check(vk_right)) || !(keyboard_check(vk_left)) && !(keyboard_check(vk_right)))
 {
-	//hsp = 0; 
+	hsp = 0; 
 	//Check if this is the problem for now
 }
 
@@ -73,7 +66,7 @@ else
 		//spr_index = spr_arrow_jump.
 		//no image speed, since it's only one frame for now.
 		//play jump sound once created.
-		vsp = -jump_spd;
+		//vsp = -jump_spd;
 	}
 }
 
@@ -83,11 +76,46 @@ else
 
 
 //sprite animation section
-if ((hsp == 0) && (place_meeting(x, y + vsp, obj_ground_parent)))
+
+//idle animations:
+if ((hsp == 0) && (place_meeting(x, y + vsp, obj_ground_parent)) && direction == 1)
 {
-	sprite_index = spr_arrow_idle;
+	sprite_index = spr_player_idle_right;
 	image_speed = 0.3;
 }
+if ((hsp == 0) && (place_meeting(x, y + vsp, obj_ground_parent)) && direction == -1)
+{
+	sprite_index = spr_player_idle_left;
+	image_speed = 0.3;
+}
+
+//running animations:
+if ((hsp > 0) && (place_meeting(x, y + vsp, obj_ground_parent)) && direction == 1)
+{
+	sprite_index = spr_player_run_right;
+	if (hsp <= max_spd)
+	{
+		image_speed = 0.3
+	}
+	else
+	{
+		image_speed = 0.5;
+	}
+}
+
+if ((hsp < 0) && (place_meeting(x, y + vsp, obj_ground_parent)) && direction == -1)
+{
+	sprite_index = spr_player_run_left;
+	if (hsp >= -max_spd)
+	{
+		image_speed = 0.3
+	}
+	else
+	{
+		image_speed = 0.5;
+	}
+}
+
 
 //TODO: Modify the sprite index based on dir value.
 if ((hsp != 0) && (place_meeting(x, y + vsp, obj_ground_parent)))

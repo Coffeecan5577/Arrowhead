@@ -47,8 +47,8 @@
                 <task id="24" name="Launch_Prep Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-23" duration="1" complete="0" expand="false">
-            <task id="13" name="Arrowhead Movement Code" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
+        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-25" duration="1" complete="0" expand="false">
+            <task id="13" name="Arrowhead Movement Code" color="#8cb6ce" meeting="false" start="2017-08-25" duration="1" complete="0" priority="2" expand="true"/>
         </task>
         <task id="25" name="Music" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
         <task id="26" name="Sound Effects" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>

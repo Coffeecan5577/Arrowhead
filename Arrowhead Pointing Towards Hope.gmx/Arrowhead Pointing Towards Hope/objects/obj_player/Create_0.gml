@@ -2,7 +2,6 @@
 max_spd = 7;
 accel_spd = 1;
 decel_spd = 2;
-dir = direction; //facing right by default.
 
 //jump variables
 jump_spd = 15;
@@ -12,7 +11,6 @@ grav_max = 10;
 //local variables for the horizontal and vertical speeds.
 hsp = hspeed;
 vsp = vspeed;
-dir = 1; //Facing right by default.
 
 //Gamepad button names
 gpad_A = gp_face1;

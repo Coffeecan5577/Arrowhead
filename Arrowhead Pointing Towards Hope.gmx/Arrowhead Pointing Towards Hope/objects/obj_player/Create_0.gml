@@ -1,7 +1,5 @@
 /// @description initialize variables
-max_spd = 7;
-accel_spd = 1;
-decel_spd = 2;
+run_spd = 3;
 
 //jump variables
 jump_spd = 15;
@@ -9,8 +7,9 @@ grav = 1; //gravity and max gravity subject to change later
 grav_max = 10;
 
 //local variables for the horizontal and vertical speeds.
-hsp = hspeed;
-vsp = vspeed;
+hsp = 0;
+vsp = 0;
+dir = 1; //facing right by default. This helps determine sprite animations.
 
 //Gamepad button names
 gpad_A = gp_face1;

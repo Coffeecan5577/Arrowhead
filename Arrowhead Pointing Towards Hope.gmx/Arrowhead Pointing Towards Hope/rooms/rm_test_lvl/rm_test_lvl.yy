@@ -997,18 +997,18 @@
             "hborder": 32,
             "hport": 720,
             "hspeed": -1,
-            "hview": 300,
+            "hview": 200,
             "inherit": false,
             "objId": "8b5561eb-08b4-40c1-9144-729fe945e16c",
             "vborder": 32,
             "visible": true,
             "vspeed": -1,
             "wport": 1280,
-            "wview": 450,
+            "wview": 300,
             "xport": 0,
             "xview": 0,
             "yport": 0,
-            "yview": 470
+            "yview": 568
         },
         {
             "id": "394d6c51-6bcb-4665-af2f-a3b9596519ab",

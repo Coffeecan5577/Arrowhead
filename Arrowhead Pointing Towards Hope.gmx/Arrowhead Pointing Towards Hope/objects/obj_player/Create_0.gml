@@ -1,5 +1,5 @@
 /// @description initialize variables
-run_spd = 3;
+run_spd = 5;
 
 //jump variables
 jump_spd = 15;

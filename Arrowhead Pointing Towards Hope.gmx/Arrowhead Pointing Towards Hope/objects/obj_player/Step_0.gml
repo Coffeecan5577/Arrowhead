@@ -16,8 +16,8 @@ else if (move == 1)
 }
 
 hsp = move * run_spd;
+vsp = vsp + grav;
 
-vsp += grav;
 
 
 //Horizontal Collisions:
@@ -29,6 +29,8 @@ if (place_meeting(x + hsp, y, obj_ground_parent))
 	}
 	hsp = 0;
 }
+
+x += hsp;
 
 //Vertical Collisions:
 if (place_meeting(x, y + vsp, obj_ground_parent))
@@ -42,49 +44,10 @@ if (place_meeting(x, y + vsp, obj_ground_parent))
 
 y += vsp;
 
-/*Checking if player is colliding with ground for jumps
 if (place_meeting(x, y + 1, obj_ground_parent)) && (key_jump)
 {
-	vsp = jump_spd;
+	vsp -= 10;
 }
-
-*/
-
-
-
-
-
-
-//No need to modify vsp for a platformer.
-
-//Code chunk for jumps //TODO: Look back at book for help on this matter.
-
-if (!place_meeting(x, y + (vsp / 2), obj_ground_parent)) && (key_jump)
-{
-	if (vsp < grav_max)
-	{
-		vsp += grav;
-	}
-}
-else
-{
-	vsp = 0;
-}
-
-
-
-//Make character jump
-/*
-{
-	if (keyboard_check_pressed(vk_space)) && (place_meeting(x, y + vsp, obj_ground_parent)) || (gamepad_button_check_pressed(0, gpad_A)) && (place_meeting(x, y + vsp, obj_ground_parent_tile
-	{
-		//spr_index = spr_arrow_jump.
-		//no image speed, since it's only one frame for now.
-		//play jump sound once created.
-		//vsp = -jump_spd;
-	}
-}
-*/
 
 
 //end jump section

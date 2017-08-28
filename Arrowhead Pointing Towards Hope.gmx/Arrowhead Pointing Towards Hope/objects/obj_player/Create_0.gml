@@ -1,9 +1,9 @@
 /// @description initialize variables
-run_spd = 5;
+run_spd = 3;
 
 //jump variables
 jump_spd = 15;
-grav = 1; //gravity and max gravity subject to change later
+grav = 0.4; //gravity and max gravity subject to change later
 grav_max = 10;
 
 //local variables for the horizontal and vertical speeds.

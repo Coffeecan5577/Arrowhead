@@ -33,15 +33,15 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="17" name="Sprites and Animations" meeting="false" start="2017-08-23" duration="34" complete="0" expand="false">
-            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="1" complete="0" expand="false">
+        <task id="17" name="Sprites and Animations" meeting="false" start="2017-08-23" duration="34" complete="0" expand="true">
+            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="6" complete="0" expand="true">
                 <task id="19" name="Idle Animation" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Completed at 3:45 P.M. on 8/23/17]]></notes>
                 </task>
                 <task id="20" name="Running Animation" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Completed on 8/23/17 at 7:45 P.M.]]></notes>
                 </task>
-                <task id="21" name="Jumping Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
+                <task id="21" name="Jumping Animation" meeting="false" start="2017-08-30" duration="1" complete="0" expand="true"/>
                 <task id="22" name="Damage Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
                 <task id="23" name="Death Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
                 <task id="24" name="Launch_Prep Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>

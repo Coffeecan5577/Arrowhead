@@ -4,10 +4,10 @@
     "mvc": "1.1",
     "name": "42e7bb92-7de1-422c-855c-1301e77eaa30",
     "children": [
-        "222fe354-a42f-4e0b-8b40-4db9b13bef66",
-        "ee83c735-2ccb-4b8e-9012-2eb1bb15652a",
-        "d99a3cb5-746e-4f53-a39f-997cd5fa30de",
-        "e771a7e9-054b-4614-b1d1-24a2ca46146c"
+        "c2cd870c-7db1-41b5-a6ab-10ea1743d282",
+        "6ffb6607-a4af-4b0b-8580-b1da84c81624",
+        "c559087a-2566-4f60-ad9e-d61b21007b87",
+        "06cfb868-9eef-4338-b820-4c5f79d3f06d"
     ],
     "filterType": "GMSprite",
     "folderName": "Player Sprites",

@@ -44,6 +44,7 @@ if (place_meeting(x, y + vsp, obj_ground_parent))
 
 y += vsp;
 
+//jumping facing right
 if (place_meeting(x, y + 1, obj_ground_parent)) && (key_jump)
 {
 	vsp -= 10;
@@ -80,6 +81,30 @@ else if (hsp < 0)
 {
 	sprite_index = spr_player_run_left;
 	image_speed = 0.8;
+}
+
+//Jumping animations
+if (vsp < 0 && dir == 1)
+{
+	sprite_index = spr_player_jump_right;
+	image_speed = 0.8;
+}
+else if (vsp < 0 && dir == -1)
+{
+	sprite_index = spr_player_jump_left;
+	image_speed = 0.8;
+	
+	//testing out stopping the animation once it is finished.
+	if (image_index == max(image_index - 1))
+	{
+		image_speed = 0;
+	}
+}
+
+//Falling Animations:
+if ( vsp > 0 && dir == 1)
+{
+	sprite_index = spr_player_fall_right;
 }
 
 

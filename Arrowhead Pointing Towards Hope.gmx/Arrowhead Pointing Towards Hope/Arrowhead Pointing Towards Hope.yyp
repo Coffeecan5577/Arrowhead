@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "19cc6734-be84-4352-9321-65964a4cc2f2",
+            "Value": {
+                "id": "6518a8b7-1d18-401f-90ee-de0f51215463",
+                "resourcePath": "views\\19cc6734-be84-4352-9321-65964a4cc2f2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1af82ca1-607d-41f3-98be-70b4d79e1313",
             "Value": {
                 "id": "e77fcf32-ab5a-4578-830d-55e471e61c57",
@@ -903,6 +911,14 @@
             }
         },
         {
+            "Key": "ba9cd6ea-ba31-4a4d-ab98-e114d945d6eb",
+            "Value": {
+                "id": "2c49b1f7-5fef-469b-937a-35349883ba57",
+                "resourcePath": "sprites\\spr_player_fall_left\\spr_player_fall_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "be3b5b37-8777-4608-aec6-1643d105e542",
             "Value": {
                 "id": "da61cf98-7684-4f3f-9f38-65751560c207",
@@ -996,6 +1012,14 @@
                 "id": "78d8b5ce-c75c-4d30-b322-d11cf02d5fd4",
                 "resourcePath": "views\\cb6a8611-f000-4615-9dcc-528252b34ec7.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cbd5a0ea-80ee-4360-82e2-2ec6269c3e3f",
+            "Value": {
+                "id": "49be0b14-cf80-401b-a718-c1ae426e71e1",
+                "resourcePath": "sprites\\spr_player_landing_left\\spr_player_landing_left.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1163,6 +1187,14 @@
             "Value": {
                 "id": "7404561a-9320-4340-a742-635c7656cefd",
                 "resourcePath": "sprites\\spr_player_run_left\\spr_player_run_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e8226e75-199e-46b4-b297-9e3e7681d298",
+            "Value": {
+                "id": "a9374588-d0ca-4ef0-b6ac-3ba75b801d03",
+                "resourcePath": "sprites\\spr_player_landing_right\\spr_player_landing_right.yy",
                 "resourceType": "GMSprite"
             }
         },

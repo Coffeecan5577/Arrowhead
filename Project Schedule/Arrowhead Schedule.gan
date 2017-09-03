@@ -60,7 +60,9 @@
                 <task id="40" name="Arrowhead Movement Code" color="#8cb6ce" meeting="false" start="2017-08-25" duration="1" complete="0" priority="2" expand="true">
                     <notes><![CDATA[Completed programming basic movement and linking animations on 8/26/17]]></notes>
                 </task>
-                <task id="41" name="Arrowhead Jumping" color="#8cb6ce" meeting="false" start="2017-09-01" duration="1" complete="0" expand="true"/>
+                <task id="41" name="Arrowhead Jumping" color="#8cb6ce" meeting="false" start="2017-09-01" duration="1" complete="0" expand="true">
+                    <notes><![CDATA[Basic jumping and gravity programmed and working on 09/02/17]]></notes>
+                </task>
                 <task id="42" name="Arrowhead Launching" color="#8cb6ce" meeting="false" start="2017-08-25" duration="1" complete="0" expand="true"/>
             </task>
             <task id="57" name="Enemy Programming" meeting="false" start="2017-10-03" duration="3" complete="0" expand="false">

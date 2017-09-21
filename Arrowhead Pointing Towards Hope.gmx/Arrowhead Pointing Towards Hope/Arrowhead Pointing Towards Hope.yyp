@@ -135,14 +135,6 @@
             }
         },
         {
-            "Key": "14f8510b-a8ed-4ce5-9d96-0e359bc2a5aa",
-            "Value": {
-                "id": "9a673f97-af11-4dad-854c-fc8c1e97ad00",
-                "resourcePath": "sprites\\spr_tree_right\\spr_tree_right.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "166b930d-8288-4fae-b5db-ccfd5598ffb6",
             "Value": {
                 "id": "1c18ec34-d030-49af-9ebb-2f6211b68a19",
@@ -487,6 +479,14 @@
             }
         },
         {
+            "Key": "694dcf22-13e2-4c38-af9f-a9bd6b11a99d",
+            "Value": {
+                "id": "1124acf4-a4c5-410a-ac1d-1c832a4c900d",
+                "resourcePath": "views\\694dcf22-13e2-4c38-af9f-a9bd6b11a99d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6982faf7-88da-4fc9-827e-157f266a5096",
             "Value": {
                 "id": "5d45ec9b-d715-4187-ac75-e42cb81e7794",
@@ -743,14 +743,6 @@
             }
         },
         {
-            "Key": "995a528c-f013-445d-a7c3-350ce8a26dd0",
-            "Value": {
-                "id": "1f1afa8c-50a4-4300-9096-383e50e1e9b2",
-                "resourcePath": "sprites\\spr_instakill\\spr_instakill.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "9a5cb7cc-03db-4499-8506-c3e1ed1eb4a8",
             "Value": {
                 "id": "49ae6e82-2b3a-4ef6-aef9-baade47b3538",
@@ -975,14 +967,6 @@
             }
         },
         {
-            "Key": "c5408e04-b19e-4dd2-9d28-dc466719fd03",
-            "Value": {
-                "id": "cf0083c0-210b-4a26-b913-3dc68a466d54",
-                "resourcePath": "sprites\\spr_tree_left\\spr_tree_left.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c559087a-2566-4f60-ad9e-d61b21007b87",
             "Value": {
                 "id": "23c4295b-4b41-447e-bba6-e5c607dacf9c",
@@ -1140,6 +1124,14 @@
                 "id": "ad44394d-f7ed-40d4-a704-01d31cfc1714",
                 "resourcePath": "sounds\\snd_option_select\\snd_option_select.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "e0a7d4b7-352b-46f5-b3b3-3e7919f76319",
+            "Value": {
+                "id": "de84d5da-4bbe-4219-a705-3272eae31d26",
+                "resourcePath": "sprites\\spr_world1_bg\\spr_world1_bg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

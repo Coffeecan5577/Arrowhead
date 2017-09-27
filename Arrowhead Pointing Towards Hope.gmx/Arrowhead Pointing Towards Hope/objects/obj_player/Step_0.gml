@@ -97,21 +97,21 @@ else if (hsp < 0)
 }
 
 //Jumping animations
-if (on_ground == false && dir == 1) //If off the ground and facing right.
+if (vsp < 0 && dir == 1) //If in the air and facing right.
 {
 	//Play sprite animation and set speed.
 	sprite_index = spr_player_jump_right;
 	image_speed = 0.4;
 }
 	
-else if (on_ground == false && dir == -1)
+else if (vsp < 0 && dir == -1) //same thing but facing left.
 {
 	sprite_index = spr_player_jump_left;
 	image_speed = 0.4;
 }
 
 //Falling Animations:
-if (sign(vsp) < 0 && dir == 1)
+if (vsp > 0 && dir == 1)
 {
 	sprite_index = spr_player_fall_right;
 	image_speed = 1;
@@ -121,7 +121,7 @@ if (sign(vsp) < 0 && dir == 1)
 	}
 }
 
-else if (sign(vsp) < 0 && dir == -1)
+else if (vsp > 0 && dir == -1)
 {
 	sprite_index = spr_player_fall_left;
 	image_speed = 1;

@@ -1,5 +1,7 @@
 /// @description initialize variables
-run_spd = 3;
+max_run_spd = 7;
+accel_run_spd = 2;
+decel_run_spd = 1;
 
 //jump variables
 grav = 0.4; //gravity and max gravity subject to change later

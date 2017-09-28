@@ -4,18 +4,29 @@ key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
 key_jump = keyboard_check_pressed(vk_space);
 
-//Movement Controls (Keyboard)
-var move = key_right - key_left;
-if (move == -1)
+//Horizontal movement chunk (For keyboard and controller):
+if (key_right) && !(key_left)
 {
-	dir = -1;
+	hsp += accel_run_spd;
+	hsp = min(hsp, max_run_spd);
 }
-else if (move == 1)
+if (hsp > 0) && !(key_left)
 {
-	dir = 1;
+	hsp -= decel_run_spd;
 }
-
-hsp = move * run_spd;
+if (key_left) && !(key_right)
+{
+	hsp -= accel_run_spd;
+	hsp = max(hsp, -max_run_spd);
+}
+if (hsp < 0) && !(key_left)
+{
+	hsp += decel_run_spd;
+}
+if (key_left) && (key_right) || !(key_left) && !(key_right)
+{
+	hsp = 0;
+}
 vsp = vsp + grav;
 
 //It's faster to do a variable check, than a collision check.

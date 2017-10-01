@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "38f13381-782d-4266-903b-ace60a71cb95",
+            "Value": {
+                "id": "cabc4727-d5e6-4749-9b50-c3a3ecdd70ea",
+                "resourcePath": "scripts\\tile_collide_at_points\\tile_collide_at_points.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3b6f3b1e-29fc-4a7b-a726-1f5886f78db0",
             "Value": {
                 "id": "9382a6e2-decc-4abc-ac7d-c55845823a3a",
@@ -879,6 +887,14 @@
             }
         },
         {
+            "Key": "b8304a68-1997-4435-90da-e89db58111bd",
+            "Value": {
+                "id": "48cb4d48-9e8f-4d4a-b4bb-8ac6a3db6780",
+                "resourcePath": "scripts\\move_and_contact_tiles\\move_and_contact_tiles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b8a68fe8-39c8-4ecc-b64a-4abb2e29df4c",
             "Value": {
                 "id": "de372858-263b-46b2-a11b-b53d2419eece",
@@ -1315,7 +1331,9 @@
         "db02a094-76e9-42fa-ae4f-1066d7352fc3",
         "5156fea2-634e-4cc8-aeb6-0c54a014a4c2",
         "166b930d-8288-4fae-b5db-ccfd5598ffb6",
-        "690a1e17-d819-4c4b-ae68-e5796a64e040"
+        "690a1e17-d819-4c4b-ae68-e5796a64e040",
+        "38f13381-782d-4266-903b-ace60a71cb95",
+        "b8304a68-1997-4435-90da-e89db58111bd"
     ],
     "tutorial": ""
 }

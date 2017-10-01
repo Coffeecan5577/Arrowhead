@@ -1,65 +1,45 @@
 /// @description Get Player's Input:
 //Assigning variables to player movement.
-key_left = keyboard_check(vk_left);
-key_right = keyboard_check(vk_right);
-key_jump = keyboard_check_pressed(vk_space);
+var x_input = (keyboard_check(vk_right) - keyboard_check(vk_left)) * acceleration_;
 
-//Horizontal movement chunk (For keyboard and controller):
-if (key_right) && !(key_left)
-{
-	hsp += accel_run_spd;
-	hsp = min(hsp, max_run_spd);
-}
-if (hsp > 0) && !(key_left)
-{
-	hsp -= decel_run_spd;
-}
-if (key_left) && !(key_right)
-{
-	hsp -= accel_run_spd;
-	hsp = max(hsp, -max_run_spd);
-}
-if (hsp < 0) && !(key_left)
-{
-	hsp += decel_run_spd;
-}
-if (key_left) && (key_right) || !(key_left) && !(key_right)
-{
-	hsp = 0;
-}
-vsp = vsp + grav;
+//Vector variables
+var vector2_x = 0;
+var vector2_y = 1;
 
-//It's faster to do a variable check, than a collision check.
-/* Minimize amount of collision checks if possible. */
-var on_ground = true; //On the ground by default.
+//Horizontal movement:
+velocity_[vector2_x] = clamp(velocity_[vector2_x] + x_input, -max_velocity_[vector2_x], max_velocity_[vector2_x]); 
 
-//Horizontal Collisions:
-if (place_meeting(x + hsp, y, obj_ground_parent))
+//Applying friction
+if (x_input == 0)
 {
-	while(!place_meeting(x + sign(hsp), y, obj_ground_parent))
+	velocity_[vector2_x] = lerp(velocity_[vector2_x], 0, .20); //Applies 20% friction to object until we reach 0
+}
+
+//Gravity
+velocity_[vector2_y] += grav_;
+
+//Move and contact tiles
+move_and_contact_tiles(collision_tile_map_id_, 32, velocity_);
+
+//Jumping
+var on_ground =  tile_collide_at_points(collision_tile_map_id_, [bbox_left, bbox_bottom], [bbox_right - 1, bbox_bottom]);
+if (on_ground)
+{
+	if (keyboard_check_pressed(vk_space))
 	{
-		x += sign(hsp);
+		velocity_[vector2_y] = -jump_speed_;
+		
 	}
-	hsp = 0;
-}
-
-x += hsp;
-
-//Vertical Collisions:
-if (place_meeting(x, y + vsp, obj_ground_parent))
-{
-	while(!place_meeting(x, y + sign(vsp), obj_ground_parent))
+	else // Control jump height
 	{
-		y += sign(vsp);
+		if (keyboard_check_released(vk_space)) && velocity_[vector2_y] <= -(jump_speed_ / 3)
+		{
+			velocity_[vector2_y] = -(jump_speed_ / 3);
+		}
 	}
-	vsp = 0;
-	//set variable to determine whether we are touching the ground.
-	 on_ground = true;
-	 num_of_jumps = 1;
 }
 
-y += vsp;
-
+/*
 //jumping
 if (on_ground && key_jump && num_of_jumps == 1)
 {
@@ -143,7 +123,7 @@ else if (vsp > 0 && dir == -1)
 }
 
 
-
+*/
 
 
 

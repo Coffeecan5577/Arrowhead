@@ -32,7 +32,7 @@
     ],
     "macroPageTiles": {
         "SerialiseData": null,
-        "SerialiseHeight": 6,
+        "SerialiseHeight": 7,
         "SerialiseWidth": 7,
         "TileSerialiseData": [
             0,
@@ -76,7 +76,14 @@
             0,
             0,
             0,
-            0
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
         ]
     },
     "out_columns": 8,

@@ -20,6 +20,13 @@ if (keyboard_check(vk_left)) && !(keyboard_check(vk_right))
 	dir = -1; //Facing left
 }
 
+//If both keys are pressed, don't move at all;
+if (keyboard_check(vk_left)) && (keyboard_check(vk_right))
+{
+	acceleration_ = 0;
+	velocity_[vector2_x] = 0;
+}
+
 
 //Applying friction
 
@@ -59,79 +66,109 @@ if (num_of_jumps_ == 0) && (keyboard_check_pressed(vk_space))
 	//Do nothing.
 }
 
-/*
-//Double jumps are a possibility later on.
 
+/* 
+Double jumps are a possibility later on.
+sprite animation section:
+First we need a way to determine which way Arrowhead is facing through the move variable.
 
-//sprite animation section:
-//First we need a way to determine which way Arrowhead is facing through the move variable.
-//Idle animations
+Changing sprites based on movement.
+
+Idle animations
 */
 
-// Changing sprites based on movement.
-/*
-if (dir == 1 && velocity_[vector2_x] == 0)
+
+if (on_ground && x_input == 0 && dir == 1)
 {
 	sprite_index = spr_player_idle_right;
-	image_speed = 0.5; //This is a multiplier in GMS2
+	image_speed = 0.9; //This is a multiplier in GMS2
 }
 
-else if (dir == -1 && velocity_[vector2_x] == 0)
+if (on_ground && x_input == 0 && dir == -1)
 {
 	sprite_index = spr_player_idle_left;
-	image_speed = 0.5;
+	image_speed = 0.9;
 }
 
-*/
+// If we are not pressing anything, but still moving, activate idle animation for that direction.
+if (on_ground && velocity_[vector2_x] > 0 && x_input == 0 && dir == 1)
+{
+	sprite_index = spr_player_idle_right;
+	image_speed = 0.9;
+}
+
+if (on_ground && velocity_[vector2_x] < 0 && x_input == 0 && dir == -1)
+{
+	sprite_index = spr_player_idle_right;
+	image_speed = 0.9;
+}
+
+//TODO: Debug this code as well.
+
+
+
 
 //Now for the running animations.
-if (velocity_[vector2_x] > 0)
+if (on_ground && velocity_[vector2_x] > 0)
 {
 	sprite_index = spr_player_run_right;
-	image_speed = 0.6;
+	image_speed = 0.9;
 }
-else if (velocity_[vector2_x] < 0)
+else if (on_ground && velocity_[vector2_x] < 0)
 {
 	sprite_index = spr_player_run_left;
-	image_speed = 0.6;
+	image_speed = 0.9;
 }
 
 //Jumping animations
-if (jump_speed_ < 0 && dir == 1) //If in the air and facing right.
+
+if (!on_ground && velocity_[vector2_y] < 0 && dir == 1) //If in the air and facing right.
 {
 	//Play sprite animation and set speed.
 	sprite_index = spr_player_jump_right;
-	image_speed = 0.4;
+	image_speed = 0.8;
+	if (velocity_[vector2_y] < 0 && image_index == 7)
+	{
+		image_speed = 0;
+	}
 }
 	
-else if (jump_speed_ < 0 && dir == -1) //same thing but facing left.
+else if (!on_ground && velocity_[vector2_y] < 0 && dir == -1) //same thing but facing left.
 {
 	sprite_index = spr_player_jump_left;
-	image_speed = 0.4;
+	image_speed = 0.8;
+	if (velocity_[vector2_y] < 0 && image_index == 7)
+	{
+		image_speed = 0;
+	}
+		
 }
 
+//TODO: Debug jumping animations 10/04/17
+
+
 //Falling Animations:
-/*
-if (jump_speed_ > 0 && dir == 1)
+
+if (!on_ground && velocity_[vector2_y] > 0 && dir == 1)
 {
 	sprite_index = spr_player_fall_right;
-	image_speed = 1;
+	image_speed = 0.7;
 	if (image_index == 2)
 	{
 		image_speed = 0;
 	}
 }
 
-else if (jump_speed_ > 0 && dir == -1)
+else if (!on_ground && velocity_[vector2_y] > 0 && dir == -1)
 {
 	sprite_index = spr_player_fall_left;
-	image_speed = 1;
+	image_speed = 0.7;
 	if (image_index == 2)
 	{
 		image_speed = 0; //Stop animation if we have finished it.
 	}
 }
-*/
+
 
 
 

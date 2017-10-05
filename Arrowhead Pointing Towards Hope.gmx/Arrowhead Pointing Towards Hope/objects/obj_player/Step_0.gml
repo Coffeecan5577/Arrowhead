@@ -169,6 +169,19 @@ else if (!on_ground && velocity_[vector2_y] > 0 && dir == -1)
 	}
 }
 
+//Idle animation on sliding to a stop
+if (on_ground && dir == 1 && velocity_[vector2_x] > 0 && x_input == 0)
+{
+	sprite_index = spr_player_idle_right;
+	image_speed = 0.9;
+}
+
+if (on_ground && dir == -1 && velocity_[vector2_x] < 0 && x_input == 0)
+{
+	sprite_index = spr_player_idle_left;
+	image_speed = 0.9;
+}
+
 
 
 

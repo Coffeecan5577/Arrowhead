@@ -16,8 +16,4 @@ dir = 1; //facing right by default. This helps determine sprite animations.
 var layer_id = layer_get_id("world_1_tiles");
 collision_tile_map_id_ = layer_tilemap_get_id(layer_id);
 
-//Gamepad button names
-gpad_A = gp_face1;
-gpad_B = gp_face2;
-gpad_X = gp_face3;
-gpad_y = gp_face4;
+

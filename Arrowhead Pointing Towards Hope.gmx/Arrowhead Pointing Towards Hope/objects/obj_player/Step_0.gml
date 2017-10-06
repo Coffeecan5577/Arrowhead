@@ -1,4 +1,10 @@
 /// @description Get Player's Input:
+//Gamepad button names
+gpad_A = gp_face1;
+gpad_B = gp_face2;
+gpad_X = gp_face3;
+gpad_y = gp_face4;
+
 //Assigning variables to player movement.
 var x_input = (keyboard_check(vk_right) - keyboard_check(vk_left)) * acceleration_;
 

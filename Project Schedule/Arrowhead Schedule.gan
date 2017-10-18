@@ -34,7 +34,7 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="17" name="Sprites and Animations" meeting="false" start="2017-08-23" duration="34" complete="0" expand="true">
-            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="6" complete="0" expand="false">
+            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="33" complete="0" expand="true">
                 <task id="19" name="Idle Animation" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Completed at 3:45 P.M. on 8/23/17]]></notes>
                 </task>
@@ -44,7 +44,7 @@
                 <task id="21" name="Jumping Animation" meeting="false" start="2017-08-30" duration="1" complete="0" expand="true"/>
                 <task id="22" name="Damage Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
                 <task id="23" name="Death Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
-                <task id="24" name="Launch_Prep Animation" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true"/>
+                <task id="24" name="Launch_Prep Animation" color="#8cb6ce" meeting="false" start="2017-10-06" duration="1" complete="0" expand="true"/>
             </task>
             <task id="58" name="Feskue Animations" meeting="false" start="2017-09-28" duration="3" complete="0" expand="false">
                 <task id="61" name="Walking Animation" meeting="false" start="2017-09-28" duration="1" complete="0" expand="true"/>
@@ -56,15 +56,15 @@
             </task>
         </task>
         <task id="90" name="Bow Animations" meeting="false" start="2017-10-09" duration="1" complete="0" expand="true"/>
-        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-25" duration="37" complete="0" expand="true">
-            <task id="39" name="Arrowhead Programming" color="#000000" meeting="false" start="2017-08-25" duration="26" complete="0" thirdDate="2017-08-25" thirdDate-constraint="1" expand="true">
+        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-25" duration="39" complete="0" expand="true">
+            <task id="39" name="Arrowhead Programming" color="#000000" meeting="false" start="2017-08-25" duration="39" complete="0" thirdDate="2017-08-25" thirdDate-constraint="1" expand="true">
                 <task id="40" name="Arrowhead Movement Code" color="#8cb6ce" meeting="false" start="2017-08-25" duration="26" complete="0" priority="2" expand="true">
                     <notes><![CDATA[Completed programming basic movement and linking animations on 8/26/17]]></notes>
                 </task>
                 <task id="41" name="Arrowhead Jumping" color="#8cb6ce" meeting="false" start="2017-08-25" duration="26" complete="0" expand="true">
                     <notes><![CDATA[Basic jumping and gravity programmed and working on 09/02/17]]></notes>
                 </task>
-                <task id="42" name="Arrowhead Launching" color="#8cb6ce" meeting="false" start="2017-08-25" duration="1" complete="0" expand="true"/>
+                <task id="42" name="Arrowhead Launching" color="#8cb6ce" meeting="false" start="2017-10-18" duration="1" complete="0" expand="true"/>
             </task>
             <task id="57" name="Enemy Programming" meeting="false" start="2017-10-03" duration="3" complete="0" expand="false">
                 <task id="68" name="Enemy Movements" meeting="false" start="2017-10-03" duration="1" complete="0" expand="true"/>
@@ -73,8 +73,8 @@
             </task>
             <task id="87" name="Collectible Programming" meeting="false" start="2017-10-16" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="88" name="Gameplay Mechanics" meeting="false" start="2017-10-17" duration="1" complete="0" expand="true">
-            <task id="89" name="Launching from Bow" meeting="false" start="2017-10-17" duration="1" complete="0" expand="true"/>
+        <task id="88" name="Gameplay Mechanics" meeting="false" start="2017-10-18" duration="1" complete="0" expand="true">
+            <task id="89" name="Launching from Bow" color="#8cb6ce" meeting="false" start="2017-10-18" duration="1" complete="0" expand="true"/>
         </task>
         <task id="25" name="Music" color="#8cb6ce" meeting="false" start="2017-09-11" duration="11" complete="0" expand="true">
             <task id="29" name="Level Music" meeting="false" start="2017-09-11" duration="8" complete="0" expand="false">

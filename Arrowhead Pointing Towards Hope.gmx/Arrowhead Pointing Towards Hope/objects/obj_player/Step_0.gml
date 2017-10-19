@@ -133,7 +133,7 @@ if (!on_ground && velocity_[vector2_y] < 0 && dir == 1) //If in the air and faci
 	//Play sprite animation and set speed.
 	sprite_index = spr_player_jump_right;
 	image_speed = 0.8;
-	if (velocity_[vector2_y] < 0 && image_index == 7)
+	if (image_index == 7)
 	{
 		image_speed = 0;
 	}
@@ -143,7 +143,7 @@ else if (!on_ground && velocity_[vector2_y] < 0 && dir == -1) //same thing but f
 {
 	sprite_index = spr_player_jump_left;
 	image_speed = 0.8;
-	if (velocity_[vector2_y] < 0 && image_index == 7)
+	if (image_index == 7)
 	{
 		image_speed = 0;
 	}

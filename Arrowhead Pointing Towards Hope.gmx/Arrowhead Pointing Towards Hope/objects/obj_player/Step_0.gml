@@ -4,6 +4,7 @@ gpad_A = gp_face1;
 gpad_B = gp_face2;
 gpad_X = gp_face3;
 gpad_y = gp_face4;
+gpad_RT = gp_shoulderr;
 
 //Assigning variables to player movement.
 var x_input = (keyboard_check(vk_right) - keyboard_check(vk_left)) * acceleration_;
@@ -186,6 +187,17 @@ if (on_ground && dir == -1 && velocity_[vector2_x] < 0 && x_input == 0)
 {
 	sprite_index = spr_player_idle_left;
 	image_speed = 0.9;
+}
+
+
+/* Launching mechanic piece
+if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
+*/
+
+if (obj_player.x <= obj_bow.x - 10 || obj_player.x <= obj_bow.x + 10 && keyboard_check(vk_lshift))
+{	
+	//Call launch_prep script.
+	//scr_launch_prep();
 }
 
 

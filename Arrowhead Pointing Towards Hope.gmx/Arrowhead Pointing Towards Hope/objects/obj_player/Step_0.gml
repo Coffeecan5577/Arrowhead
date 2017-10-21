@@ -194,10 +194,15 @@ if (on_ground && dir == -1 && velocity_[vector2_x] < 0 && x_input == 0)
 if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
 */
 
-if (obj_player.x <= obj_bow.x - 10 || obj_player.x <= obj_bow.x + 10 && keyboard_check(vk_lshift))
+if (!on_ground && place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift))
 {	
 	//Call launch_prep script.
-	//scr_launch_prep();
+	scr_launch_prep();
+}
+
+if (keyboard_check_released(vk_lshift))
+{
+	velocity_[vector2_y] += grav;
 }
 
 

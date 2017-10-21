@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "3256dc84-f10d-4bad-8805-b6c845e51c21",
+            "Value": {
+                "id": "c43b1db7-e2ab-4fdc-b8c5-3fadac20ae32",
+                "resourcePath": "objects\\obj_power_meter\\obj_power_meter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "335b15a3-7b95-4db9-b505-b1e1ff21bbbb",
             "Value": {
                 "id": "d7114794-2326-4df3-91f4-eba7ca962cba",

@@ -1,18 +1,28 @@
 {
-    "id": "11f0655f-838c-44fc-b252-8499efd29f69",
+    "id": "3256dc84-f10d-4bad-8805-b6c845e51c21",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_bow",
+    "name": "obj_power_meter",
     "eventList": [
         {
-            "id": "be725318-84d0-49f2-a03d-512621f8a175",
+            "id": "9b0c6053-5285-4704-8d5f-7fe126711257",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "3256dc84-f10d-4bad-8805-b6c845e51c21"
+        },
+        {
+            "id": "e52f9dbd-b152-47a6-8b3f-dac90ecb3e4d",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "11f0655f-838c-44fc-b252-8499efd29f69"
+            "m_owner": "3256dc84-f10d-4bad-8805-b6c845e51c21"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -31,6 +41,6 @@
     "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "8568fd02-f414-4ede-89b5-5a0b544c6114",
+    "spriteId": "705243ee-20b8-43a6-a10a-e6290db02d34",
     "visible": true
 }

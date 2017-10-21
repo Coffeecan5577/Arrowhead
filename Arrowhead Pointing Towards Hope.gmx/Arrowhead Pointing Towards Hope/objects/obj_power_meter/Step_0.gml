@@ -9,7 +9,7 @@ if (image_index == 23)
 }
 
 //if lshift or RT are released before launching, but after script is called, destroy the object.
-if (keyboard_check_released(lshift) && scr_launch_prep())
+if (keyboard_check_released(vk_lshift))
 {
 	//switch sprite back, reverse animation, then destroy object.
 	sprite_index = spr_power_meter;

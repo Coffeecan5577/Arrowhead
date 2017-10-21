@@ -194,15 +194,31 @@ if (on_ground && dir == -1 && velocity_[vector2_x] < 0 && x_input == 0)
 if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
 */
 
-if (!on_ground && place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift))
-{	
-	//Call launch_prep script.
-	scr_launch_prep();
+//1. Change the sprite, and move the player to the center of the bow sprite
+//2. Change launch prep sprite based on bow direction. We will need a global variable.
+if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && dir == 1)
+{
+	sprite_index = spr_arrow_aim_right;
+	image_speed = 0;
+	velocity_[vector2_x] = 0;
+	velocity_[vector2_y]= 0;
+}
+else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && dir == -1)
+{
+	sprite_index = spr_arrow_aim_left;
+	image_speed = 0;
+	velocity_[vector2_x] = 0;
+	velocity_[vector2_y]= 0;
 }
 
-if (keyboard_check_released(vk_lshift))
+while (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)
 {
-	velocity_[vector2_y] += grav;
+	grav = 0; //No gravity while this is happening.
+	if (keyboard_check(vk_left) || keyboard_check(vk_right))
+	{
+		velocity_[vector2_x] = 0;
+	}
+	
 }
 
 

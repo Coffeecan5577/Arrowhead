@@ -1,11 +1,15 @@
 //Change animation speed
 image_speed = 0.65;
 
-//If the launch script is called
-if (scr_launch_prep)
-{	
-	//Create the power meter above the bow.
-	instance_create_layer(x, y - 20, "lvl_objects", obj_power_meter);
+if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.bow_pos == 1)
+{
+	sprite_index = spr_bow_pull_right;
+	image_speed = 0;
+}
+else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.bow_pos == -1)
+{
+	sprite_index = spr_bow_pull_left;
+	image_speed = 0;
 }
 
-	
+//Create the power meter object above the bow.

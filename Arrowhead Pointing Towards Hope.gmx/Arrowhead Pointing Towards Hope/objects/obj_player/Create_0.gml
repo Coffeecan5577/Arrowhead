@@ -13,6 +13,10 @@ acceleration_ = 2.1;
 dir = 1; //facing right by default. This helps determine sprite animations.
 global.arrow_launch = 0; //Boolean used to determine whether we are launching or using diving attack.
 
+//X and Y position variables.
+xpos = obj_player.x;
+ypos = obj_player.y;
+
 //Get tile_map_id
 var layer_id = layer_get_id("world_1_tiles");
 collision_tile_map_id_ = layer_tilemap_get_id(layer_id);

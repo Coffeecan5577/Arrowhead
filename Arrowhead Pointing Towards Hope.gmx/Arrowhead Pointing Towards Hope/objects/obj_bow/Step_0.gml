@@ -13,3 +13,6 @@ else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.
 }
 
 //Create the power meter object above the bow.
+instance_create_layer(x, y - 45, "lvl_objects", obj_power_meter);
+
+//checking for multiple instances of an object.

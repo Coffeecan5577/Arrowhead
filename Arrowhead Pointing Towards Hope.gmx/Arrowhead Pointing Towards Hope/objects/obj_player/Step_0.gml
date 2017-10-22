@@ -198,8 +198,9 @@ if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pre
 //2. Change launch prep sprite based on bow direction. We will need a global variable.
 if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && dir == 1)
 {
-	xpos = obj_bow.x;
-	ypos = obj_bow.y - 10;
+	//change x and y position to be on the bow.
+	x = obj_bow.x;
+	y = obj_bow.y - 10;
 	sprite_index = spr_arrow_aim_right;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
@@ -207,8 +208,8 @@ if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && dir == 1)
 }
 else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && dir == -1)
 {
-	xpos = obj_bow.x;
-	ypos = obj_bow.y - 10;
+	x = obj_bow.x;
+	y = obj_bow.y - 10;
 	sprite_index = spr_arrow_aim_left;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
@@ -220,7 +221,15 @@ if (!keyboard_check_released(vk_lshift) && sprite_index == spr_arrow_aim_left ||
 	grav_ = 0; //no gravity while we are aiming.
 }
 
+//if our sprite is either aim left or right, and we are pressing arrow keys.
+if (sprite_index == spr_arrow_aim_right || sprite_index == spr_arrow_aim_left && keyboard_check(vk_left) || keyboard_check(vk_right))
+{
+	velocity_[vector2_x] = 0; //Do not move from that position.
+}
 
+//We want all of the sprites to change based on the value of the power meter.
+//Since that is a global variable, that should be relatively easy to do.
+//Don't know if it would be easier to have an object manage all 3 sprites, or to just do each one individually based on the power value.
 
 
 

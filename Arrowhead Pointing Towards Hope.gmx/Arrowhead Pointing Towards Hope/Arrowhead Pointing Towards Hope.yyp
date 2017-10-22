@@ -911,6 +911,14 @@
             }
         },
         {
+            "Key": "ae4f91ec-348e-4e80-aec1-cb8b6f084c72",
+            "Value": {
+                "id": "99ca9660-3752-4c7d-8c46-05297046554d",
+                "resourcePath": "objects\\obj_power_management\\obj_power_management.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b0900d3a-b8f8-4324-b526-bebb81536b15",
             "Value": {
                 "id": "df6c28e9-056a-447d-a68c-86e522185673",

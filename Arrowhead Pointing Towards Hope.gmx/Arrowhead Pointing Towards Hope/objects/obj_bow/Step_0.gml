@@ -12,7 +12,10 @@ else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.
 	image_speed = 0;
 }
 
-//We do not need the bow to handle the power meter's creation.
-
+//We need the bow to handle the power meter's creation.
+if (sprite_index == spr_bow_pull_right || sprite_index == spr_bow_pull_left)
+{
+	instance_create_layer(obj_bow.x, obj_bow.y - 10, "lvl_objects", obj_power_meter);
+}
 
 

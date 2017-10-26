@@ -200,7 +200,7 @@ if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos 
 {
 	//change x and y position to be on the bow.
 	x = obj_bow.x;
-	y = obj_bow.y - 10;
+	y = obj_bow.y;
 	sprite_index = spr_arrow_aim_right;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
@@ -209,7 +209,7 @@ if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos 
 else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos == -1)
 {
 	x = obj_bow.x;
-	y = obj_bow.y - 10;
+	y = obj_bow.y;
 	sprite_index = spr_arrow_aim_left;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;

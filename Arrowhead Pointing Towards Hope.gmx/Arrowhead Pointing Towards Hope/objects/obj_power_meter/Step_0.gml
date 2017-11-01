@@ -1,6 +1,5 @@
 //If there is a collision between the arrow and the bow, and the sprites are changed, and the shift key is not released, create the object, and set the bool
 image_speed = 0;
-image_index = 0;
 
 //Debugging the animation: 10/31/17
 //NOTE!!!!!: image_index is a floating point by default. Need to round to fix the issue.

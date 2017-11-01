@@ -255,6 +255,14 @@
             }
         },
         {
+            "Key": "2bfea4cd-2c8c-4472-985d-04f6c17374c1",
+            "Value": {
+                "id": "a04bd6eb-66b2-4b86-a335-81c71ab9730e",
+                "resourcePath": "objects\\obj_create_meter\\obj_create_meter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2f0913a5-5e2e-410a-9847-7519b1f0bb29",
             "Value": {
                 "id": "d76e3806-f55d-4f79-a630-1c8c8bdaaec5",

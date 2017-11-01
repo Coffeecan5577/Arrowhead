@@ -216,6 +216,16 @@ else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow
 	velocity_[vector2_y]= 0;
 }
 
+if (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)
+{
+	global.launch_prep = 1;
+}
+else
+{
+	global.launch_prep = 0;
+}
+
+
 
 //We want all of the sprites to change based on the value of the power meter.
 //Since that is a global variable, that should be relatively easy to do.

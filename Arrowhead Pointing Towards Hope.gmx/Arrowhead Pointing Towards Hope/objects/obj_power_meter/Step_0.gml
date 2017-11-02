@@ -6,18 +6,20 @@ image_speed = 0;
 
 
 //if lshift or RT are released before launching, destroy the object.
-if (keyboard_check_released(vk_lshift) && sprite_index == spr_power_meter_build)
+if (keyboard_check_released(vk_lshift) && instance_exists(self))
 {
 	//Destroy the power meter
-	instance_destroy(obj_power_meter);
+	instance_destroy(self);
+	instance_destroy(obj_manage_launch_sprites);
 }
 
 //Same thing will apply when we have launched.
 
 
-if (global.arrow_launch == 1 && sprite_index == spr_power_meter_build)
+if (global.arrow_launch == 1)
 {
-	instance_destroy(obj_power_meter);
+	instance_destroy(self);
+	instance_destroy(obj_manage_launch_sprites);
 }
 
 //Object will handle it's own creation and destruction settings.

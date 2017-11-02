@@ -922,7 +922,7 @@
             "Key": "ae4f91ec-348e-4e80-aec1-cb8b6f084c72",
             "Value": {
                 "id": "99ca9660-3752-4c7d-8c46-05297046554d",
-                "resourcePath": "objects\\obj_power_management\\obj_power_management.yy",
+                "resourcePath": "objects\\obj_manage_launch_sprites\\obj_manage_launch_sprites.yy",
                 "resourceType": "GMObject"
             }
         },

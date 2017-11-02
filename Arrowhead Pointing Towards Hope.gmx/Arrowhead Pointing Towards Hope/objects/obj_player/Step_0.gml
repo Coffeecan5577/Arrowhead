@@ -199,8 +199,8 @@ if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pre
 if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos == 1)
 {
 	//change x and y position to be on the bow.
-	x = obj_bow.x;
-	y = obj_bow.y;
+	x = obj_bow.x - 5;
+	y = obj_bow.y + 1;
 	sprite_index = spr_arrow_aim_right;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
@@ -208,8 +208,8 @@ if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos 
 }
 else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos == -1)
 {
-	x = obj_bow.x;
-	y = obj_bow.y;
+	x = obj_bow.x + 5;
+	y = obj_bow.y + 1;
 	sprite_index = spr_arrow_aim_left;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
@@ -232,5 +232,31 @@ else
 //Don't know if it would be easier to have an object manage all 3 sprites, or to just do each one individually based on the power value.
 
 ///IMPORTANT: 10/23/17 -- So far, Arrowhead's part is ok. Now onto the power meter.
+
+//Changing sprites based on power meter value
+if (instance_exists(obj_power_meter))
+{
+	if (sprite_index == spr_arrow_aim_right || sprite_index == spr_arrow_aim_left)
+	{
+		if (global.launch_power == 1.10)
+		{
+			image_index = 0;
+		}
+		else if (global.launch_power > 1.10 && global.launch_power <= 1.20)
+		{
+			image_index = 1;
+		}
+		else if (global.launch_power >= 1.20 && global.launch_power <= 1.35)
+		{
+			image_index = 2; 
+		}
+		else if (global.launch_power >= 1.35 && global.launch_power <= 1.50)
+		{
+			image_index = 3;
+		}
+	}
+}
+
+
 
 

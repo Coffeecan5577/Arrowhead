@@ -196,17 +196,33 @@ if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pre
 
 //1. Change the sprite, and move the player to the center of the bow sprite
 //2. Change launch prep sprite based on bow direction. We will need a global variable.
-if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos == 1)
+if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift))
 {
-	//change x and y position to be on the bow.
-	x = obj_bow.x - 5;
-	y = obj_bow.y + 1;
-	sprite_index = spr_arrow_aim_right;
-	image_speed = 0;
-	velocity_[vector2_x] = 0;
-	velocity_[vector2_y]= 0;
+	with(other)
+	{
+		if (image_xscale == 1)
+		{
+			x = obj_bow.x - 5;
+			y = obj_bow.y + 1;
+			sprite_index = spr_arrow_aim_right;
+			image_speed = 0;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y]= 0;
+		}
+		else if (image_xscale == -1)
+		{
+			x = obj_bow.x + 5;
+			y = obj_bow.y + 1;
+			sprite_index = spr_arrow_aim_left;
+			image_speed = 0;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y]= 0;
+		}
+	}
 }
-else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow_pos == -1)
+
+/*
+else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && (other).bow_pos == -1)
 {
 	x = obj_bow.x + 5;
 	y = obj_bow.y + 1;
@@ -215,6 +231,7 @@ else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && global.bow
 	velocity_[vector2_x] = 0;
 	velocity_[vector2_y]= 0;
 }
+*/
 
 if (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)
 {

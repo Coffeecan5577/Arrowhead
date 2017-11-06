@@ -1,16 +1,21 @@
 //Change animation speed
 image_speed = 0.5;
 
-if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.bow_pos == 1)
+if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && bow_pos == 1)
 {
 	sprite_index = spr_bow_pull_right;
 	image_index = 0;
 }
 
-else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && global.bow_pos == -1)
+else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && bow_pos == -1)
 {
 	sprite_index = spr_bow_pull_left;
 	image_speed = 0;
+}
+
+else
+{
+	sprite_index = spr_bow_idle;
 }
 
 

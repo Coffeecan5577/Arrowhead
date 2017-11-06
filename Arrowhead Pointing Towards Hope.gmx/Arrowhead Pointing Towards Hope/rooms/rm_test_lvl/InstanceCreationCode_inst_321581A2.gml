@@ -1,1 +1,0 @@
-global.bow_pos = 1;

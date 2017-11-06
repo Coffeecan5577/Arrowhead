@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Arrowhead Schedule" company="" webLink="http://" view-date="2017-08-05" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Arrowhead Schedule" company="" webLink="http://" view-date="2017-08-20" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.5" locale="en_US">
     <description><![CDATA[A detailed  project schedule for the game Arrowhead]]></description>
-    <view zooming-state="default:2" id="gantt-chart">
+    <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Name" width="167" order="0"/>
         <field id="tpd4" name="Begin date" width="65" order="1"/>
         <field id="tpd5" name="End date" width="64" order="2"/>
@@ -33,8 +33,8 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="17" name="Sprites and Animations" meeting="false" start="2017-08-23" duration="43" complete="0" expand="true">
-            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="43" complete="0" expand="true">
+        <task id="17" name="Sprites and Animations" meeting="false" start="2017-08-23" duration="43" complete="0" expand="false">
+            <task id="18" name="Arrowhead Animations" meeting="false" start="2017-08-23" duration="43" complete="0" expand="false">
                 <task id="19" name="Idle Animation" color="#8cb6ce" meeting="false" start="2017-08-23" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Completed at 3:45 P.M. on 8/23/17]]></notes>
                 </task>
@@ -55,9 +55,11 @@
                 <task id="66" name="Death Animation" meeting="false" start="2017-10-09" duration="1" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="90" name="Bow Animations" meeting="false" start="2017-10-09" duration="1" complete="0" expand="true"/>
-        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-25" duration="39" complete="0" expand="true">
-            <task id="39" name="Arrowhead Programming" color="#000000" meeting="false" start="2017-08-25" duration="39" complete="0" thirdDate="2017-08-25" thirdDate-constraint="1" expand="true">
+        <task id="90" name="Bow Animations" color="#8cb6ce" meeting="false" start="2017-10-09" duration="8" complete="0" expand="true">
+            <notes><![CDATA[Completed all bow animations]]></notes>
+        </task>
+        <task id="12" name="Programming Tasks" meeting="false" start="2017-08-25" duration="39" complete="0" expand="false">
+            <task id="39" name="Arrowhead Programming" color="#000000" meeting="false" start="2017-08-25" duration="39" complete="0" thirdDate="2017-08-25" thirdDate-constraint="1" expand="false">
                 <task id="40" name="Arrowhead Movement Code" color="#8cb6ce" meeting="false" start="2017-08-25" duration="26" complete="0" priority="2" expand="true">
                     <notes><![CDATA[Completed programming basic movement and linking animations on 8/26/17]]></notes>
                 </task>
@@ -73,28 +75,28 @@
             </task>
             <task id="87" name="Collectible Programming" meeting="false" start="2017-10-16" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="88" name="Gameplay Mechanics" meeting="false" start="2017-10-18" duration="1" complete="0" expand="true">
+        <task id="88" name="Gameplay Mechanics" meeting="false" start="2017-10-18" duration="1" complete="0" expand="false">
             <task id="89" name="Launching from Bow" color="#8cb6ce" meeting="false" start="2017-10-18" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="25" name="Music" color="#8cb6ce" meeting="false" start="2017-09-11" duration="11" complete="0" expand="true">
+        <task id="25" name="Music" color="#8cb6ce" meeting="false" start="2017-09-11" duration="11" complete="0" expand="false">
             <task id="29" name="Level Music" meeting="false" start="2017-09-11" duration="8" complete="0" expand="false">
                 <task id="30" name="World 1 Music" meeting="false" start="2017-09-11" duration="1" complete="0" expand="true"/>
                 <task id="33" name="World 2 Music" meeting="false" start="2017-09-20" duration="1" complete="0" expand="true"/>
             </task>
             <task id="31" name="Menu Music" meeting="false" start="2017-09-25" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="26" name="Sound Effects" color="#8cb6ce" meeting="false" start="2017-09-20" duration="19" complete="0" expand="true">
+        <task id="26" name="Sound Effects" color="#8cb6ce" meeting="false" start="2017-09-20" duration="19" complete="0" expand="false">
             <task id="34" name="Menu Sound effects" meeting="false" start="2017-10-16" duration="1" complete="0" expand="true"/>
             <task id="35" name="Arrowhead Sound Effects" meeting="false" start="2017-09-20" duration="1" complete="0" expand="true"/>
             <task id="36" name="AI Sound Effects" meeting="false" start="2017-09-22" duration="1" complete="0" expand="true"/>
             <task id="37" name="Collectible Sound Effects" meeting="false" start="2017-09-25" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="27" name="Level Design" color="#8cb6ce" meeting="false" start="2017-09-05" duration="23" complete="0" thirdDate="2017-08-28" thirdDate-constraint="1" expand="true">
-            <task id="48" name="Backgrounds" meeting="false" start="2017-09-05" duration="12" complete="0" expand="true">
+        <task id="27" name="Level Design" color="#8cb6ce" meeting="false" start="2017-09-05" duration="23" complete="0" thirdDate="2017-08-28" thirdDate-constraint="1" expand="false">
+            <task id="48" name="Backgrounds" meeting="false" start="2017-09-05" duration="12" complete="0" expand="false">
                 <task id="50" name="World 1 Backgrounds" color="#8cb6ce" meeting="false" start="2017-09-20" duration="1" complete="0" expand="true"/>
                 <task id="52" name="World 2 Backgrounds" color="#8cb6ce" meeting="false" start="2017-09-05" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="53" name="Level Tiles" color="#000000" meeting="false" start="2017-09-20" duration="12" complete="0" thirdDate="2017-08-28" thirdDate-constraint="1" expand="true">
+            <task id="53" name="Level Tiles" color="#000000" meeting="false" start="2017-09-20" duration="12" complete="0" thirdDate="2017-08-28" thirdDate-constraint="1" expand="false">
                 <task id="55" name="World 1 Tiles" color="#8cb6ce" meeting="false" start="2017-09-20" duration="9" complete="0" expand="true"/>
                 <task id="56" name="World 2 Tiles" meeting="false" start="2017-10-05" duration="1" complete="0" expand="true"/>
             </task>

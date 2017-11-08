@@ -1,13 +1,25 @@
 //Change animation speed
 image_speed = 0.5;
+//Setting up a instance_place collision variable.
 
-if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && bow_pos == 1)
+bow_collide = instance_place(x, y, obj_player);
+
+if (image_xscale == 1)
+{
+	bow_pos = 1;
+}
+else if (image_xscale == -1) 
+{
+	bow_pos = -1;
+}
+
+if (bow_collide != noone && keyboard_check(vk_lshift) && bow_pos == 1)
 {
 	sprite_index = spr_bow_pull_right;
 	image_index = 0;
 }
 
-else if (place_meeting(x, y, obj_player) && keyboard_check(vk_lshift) && bow_pos == -1)
+else if (bow_collide != noone && keyboard_check(vk_lshift) && bow_pos == -1)
 {
 	sprite_index = spr_bow_pull_left;
 	image_speed = 0;

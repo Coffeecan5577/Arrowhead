@@ -194,44 +194,33 @@ if (on_ground && dir == -1 && velocity_[vector2_x] < 0 && x_input == 0)
 if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
 */
 
+//Setting up a collision variable
+var collision = instance_place(x, y, obj_bow);
+
 //1. Change the sprite, and move the player to the center of the bow sprite
 //2. Change launch prep sprite based on bow direction. We will need a global variable.
-if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift))
+if (collision && keyboard_check(vk_lshift) && collision.bow_pos == 1)
 {
-	with(other)
-	{
-		if (image_xscale == 1)
-		{
-			x = obj_bow.x - 5;
-			y = obj_bow.y + 1;
-			sprite_index = spr_arrow_aim_right;
-			image_speed = 0;
-			velocity_[vector2_x] = 0;
-			velocity_[vector2_y]= 0;
-		}
-		else if (image_xscale == -1)
-		{
-			x = obj_bow.x + 5;
-			y = obj_bow.y + 1;
-			sprite_index = spr_arrow_aim_left;
-			image_speed = 0;
-			velocity_[vector2_x] = 0;
-			velocity_[vector2_y]= 0;
-		}
-	}
+	x = collision.x - 5;
+	y = collision.y + 1;
+	sprite_index = spr_arrow_aim_right;
+	image_speed = 0;
+	velocity_[vector2_x] = 0;
+	velocity_[vector2_y]= 0;	
 }
 
-/*
-else if (place_meeting(x, y, obj_bow) && keyboard_check(vk_lshift) && (other).bow_pos == -1)
+
+else if (collision && keyboard_check(vk_lshift) && collision.bow_pos == -1)
 {
-	x = obj_bow.x + 5;
-	y = obj_bow.y + 1;
+	x = collision.x + 5;
+	y = collision.y + 1;
 	sprite_index = spr_arrow_aim_left;
 	image_speed = 0;
 	velocity_[vector2_x] = 0;
 	velocity_[vector2_y]= 0;
+		
 }
-*/
+
 
 if (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)
 {

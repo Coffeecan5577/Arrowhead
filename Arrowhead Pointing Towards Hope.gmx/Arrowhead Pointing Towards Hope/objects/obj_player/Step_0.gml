@@ -199,17 +199,34 @@ var collision = instance_place(x, y, obj_bow);
 
 //1. Change the sprite, and move the player to the center of the bow sprite
 //2. Change launch prep sprite based on bow direction. We will need a global variable.
-if (collision && keyboard_check(vk_lshift) && collision.bow_pos == 1)
+if (collision && keyboard_check(vk_lshift))
 {
-	x = collision.x - 5;
-	y = collision.y + 1;
-	sprite_index = spr_arrow_aim_right;
-	image_speed = 0;
-	velocity_[vector2_x] = 0;
-	velocity_[vector2_y]= 0;	
+	with (other)
+	{
+		bow_index = object_index;
+		if (bow_index.image_xscale == 1)
+		{
+			x = collision.x - 5;
+			y = collision.y + 1;
+			sprite_index = spr_arrow_aim_right;
+			image_speed = 0;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y]= 0;	
+		}
+		else if (bow_index.image_xscale == -1)
+		{
+			x = collision.x + 5;
+			y = collision.y + 1;
+			sprite_index = spr_arrow_aim_left;
+			image_speed = 0;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y]= 0;
+		}
+	}
 }
 
 
+/*
 else if (collision && keyboard_check(vk_lshift) && collision.bow_pos == -1)
 {
 	x = collision.x + 5;
@@ -220,6 +237,7 @@ else if (collision && keyboard_check(vk_lshift) && collision.bow_pos == -1)
 	velocity_[vector2_y]= 0;
 		
 }
+*/
 
 
 if (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)

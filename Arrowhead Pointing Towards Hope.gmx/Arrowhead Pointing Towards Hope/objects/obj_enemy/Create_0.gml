@@ -1,13 +1,11 @@
-/// Initialize variables for enemy
-
+/// @description initialize variables
 velocity_ = [0, 0];
 
-//jump variables
 grav_ = 0.3; //gravity and max gravity subject to change later Original value is 0.4
 grav_max_ = 4; //original value was 10
 
 //local variables for the horizontal and vertical speeds.
-max_velocity_ = [6, 0];
+max_velocity_ = [choose(5, 9), 32]; //Randomly sets a horizontal speed for each enemy created.
 acceleration_ = 2.1;
 dir = 1; //facing right by default. This helps determine sprite animations.
 

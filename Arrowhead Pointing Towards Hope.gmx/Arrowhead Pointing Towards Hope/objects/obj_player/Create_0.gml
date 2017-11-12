@@ -2,8 +2,8 @@
 velocity_ = [0, 0];
 
 //position variables.
-xpos = obj_player.x;
-ypos = obj_player.y;
+var xpos = x;
+var ypos = y;
 
 //jump variables
 grav_ = 0.3; //gravity and max gravity subject to change later Original value is 0.4

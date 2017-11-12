@@ -1,0 +1,1 @@
+velocity_[vector2_x] *= -dir; //Switch directions once alarm goes off.

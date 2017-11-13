@@ -3,17 +3,21 @@ var vector2_x = 0;
 var vector2_y = 1;
 
 //Horizontal movement:
-velocity_[vector2_x] = clamp(velocity_[vector2_x] * acceleration_, -max_velocity_[vector2_x], max_velocity_[vector2_x]); 
+velocity_[vector2_x] = clamp(velocity_[vector2_x] + (acceleration_ * dir), -max_velocity_[vector2_x], max_velocity_[vector2_x]); 
 
-if (tile_collide_at_points(collision_tile_map_id_, [bbox_right - 1, bbox_bottom]) && dir == 1 && velocity_[vector2_x] == 0)
+//If we collide with another tile and our velocity is either > || < 0
+if (tile_collide_at_points(collision_tile_map_id_, [bbox_right + 3, bbox_top]) && velocity_[vector2_x] > 0)
 {
-	//Switch directions.
-	alarm[0] = room_speed * choose(1.5, 3.6); //Set a random time to switch directions.
+	//1. Set velocity to 0
+	//2. Set alarm to switch directions.
+	velocity_[vector2_x] = 0;
+	alarm[0] = (room_speed * choose(1.5, 2.1)); //Set a random time to switch directions.
 }
-else if (tile_collide_at_points(collision_tile_map_id_, [bbox_left + 1, bbox_bottom]) && dir == -1 && velocity_[vector2_x] == 0)
+
+else if (tile_collide_at_points(collision_tile_map_id_, [bbox_left + 3, bbox_top]) && velocity_[vector2_x] < 0)
 {
-	//Switch again.
-	alarm[0] = room_speed * choose(1.5, 3.6); //Set a random time to switch directions.
+	velocity_[vector2_x] = 0;
+	alarm[0] = (room_speed * choose(1.5, 2.1)); 
 }
 
 

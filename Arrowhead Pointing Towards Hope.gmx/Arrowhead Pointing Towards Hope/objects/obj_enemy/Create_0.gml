@@ -6,7 +6,7 @@ grav_max_ = 4; //original value was 10
 
 //local variables for the horizontal and vertical speeds.
 max_velocity_ = [choose(5, 9), 32]; //Randomly sets a horizontal speed for each enemy created.
-acceleration_ = 2.1;
+acceleration_ = choose(.70, 1.15);
 dir = 1; //facing right by default. This helps determine sprite animations.
 
 

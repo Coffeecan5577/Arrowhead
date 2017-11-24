@@ -1,1 +1,1 @@
-game_restart();
+scr_slide_transition(TRANS_MODE.RESTART); //We can use this enum thanks to them being global in scope.

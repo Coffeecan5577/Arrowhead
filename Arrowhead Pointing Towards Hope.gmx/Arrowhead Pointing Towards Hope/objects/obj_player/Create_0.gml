@@ -17,6 +17,7 @@ acceleration_ = 2.1;
 dir = 1; //facing right by default. This helps determine sprite animations.
 global.arrow_launch = 0; //Boolean used to determine whether we are launching or using diving attack.
 global.launch_prep = 0; //Boolean used to set whether or not we are in a launch prep state.
+has_control = true;
 
 
 //Get tile_map_id

@@ -193,28 +193,25 @@ if (has_control)
 	//2. Change launch prep sprite based on bow direction. We will need a global variable.
 	if (collision && keyboard_check(vk_lshift))
 	{
-		with (other)
+		global.launch_prep = 1;
+		if (dir == 1)
 		{
-			bow_index = object_index;
-			if (other.image_xscale == 1)
-			{
-				x = collision.x - 5;
-				y = collision.y + 1;
-				sprite_index = spr_arrow_aim_right;
-				image_speed = 0;
-				velocity_[vector2_x] = 0;
-				velocity_[vector2_y]= 0;	
-			}
-			else if (other.image_xscale == -1)
-			{
-				x = collision.x + 5;
-				y = collision.y + 1;
-				sprite_index = spr_arrow_aim_left;
-				image_speed = 0;
-				velocity_[vector2_x] = 0;
-				velocity_[vector2_y]= 0;
-			}
+			x = collision.x - 5;
+			y = collision.y + 1;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y]= 0;	
 		}
+		else if (dir == -1)
+		{
+			x = collision.x + 5;
+			y = collision.y + 1;
+			velocity_[vector2_x] = 0;
+			velocity_[vector2_y] = 0;	
+		}
+	}
+	else
+	{
+		global.launch_prep = 0;
 	}
 
 
@@ -231,18 +228,6 @@ if (has_control)
 	}
 	*/
 
-
-	if (sprite_index == spr_arrow_aim_left || sprite_index == spr_arrow_aim_right)
-	{
-		global.launch_prep = 1;
-	}
-	else
-	{
-		global.launch_prep = 0;
-	}
-
-
-
 	//We want all of the sprites to change based on the value of the power meter.
 	//Since that is a global variable, that should be relatively easy to do.
 	//Don't know if it would be easier to have an object manage all 3 sprites, or to just do each one individually based on the power value.
@@ -252,7 +237,7 @@ if (has_control)
 	//Changing sprites based on power meter value
 	if (instance_exists(obj_power_meter))
 	{
-		if (sprite_index == spr_arrow_aim_right || sprite_index == spr_arrow_aim_left)
+		if (global.launch_prep == 1)
 		{
 			if (global.launch_power == 1.10)
 			{

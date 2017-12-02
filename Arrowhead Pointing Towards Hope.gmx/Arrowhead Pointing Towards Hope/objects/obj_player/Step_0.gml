@@ -7,46 +7,42 @@ gpad_y = gp_face4;
 gpad_RT = gp_shoulderr;
 */
 
-if (has_control)
+
+#region Player Input
+//If we have control of the player
+//Assigning variables to player movement.
+x_input = (keyboard_check(vk_right) - keyboard_check(vk_left) * acceleration_);
+
+
+//Horizontal movement:
+velocity_[vector2_x] = clamp(velocity_[vector2_x] + x_input, -max_velocity_[vector2_x] - 1, max_velocity_[vector2_x]); 
+
+//Determining Direction:
+if (keyboard_check(vk_right)) && !(keyboard_check(vk_left))
 {
-	#region Player Input
-	//If we have control of the player
-	//Assigning variables to player movement.
-	var x_input = (keyboard_check(vk_right) - keyboard_check(vk_left)) * acceleration_;
+	dir = 1; //facing right
+}
 
-	//Vector variables
-	var vector2_x = 0;
-	var vector2_y = 1;
+if (keyboard_check(vk_left)) && !(keyboard_check(vk_right))
+{
+	dir = -1; //Facing left
+}
 
-	//Horizontal movement:
-	velocity_[vector2_x] = clamp(velocity_[vector2_x] + x_input, -max_velocity_[vector2_x], max_velocity_[vector2_x]); 
-
-	//Determining Direction:
-	if (keyboard_check(vk_right)) && !(keyboard_check(vk_left))
-	{
-		dir = 1; //facing right
-	}
-
-	if (keyboard_check(vk_left)) && !(keyboard_check(vk_right))
-	{
-		dir = -1; //Facing left
-	}
-
-	//If both keys are pressed, don't move at all;
-	if (keyboard_check(vk_left)) && (keyboard_check(vk_right))
-	{
-		acceleration_ = 0;
-		velocity_[vector2_x] = 0;
-	}
+//If both keys are pressed, don't move at all;
+if (keyboard_check(vk_left)) && (keyboard_check(vk_right))
+{
+	velocity_[vector2_x] = 0;
+}
 	
-	//Applying friction
+//Applying friction
 
-	if (x_input == 0)
-	{
-		velocity_[vector2_x] = lerp(velocity_[vector2_x], 0, .20); //Applies 20% friction to object until we reach 0
-	}
+if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
+{
+	velocity_[vector2_x] = lerp(velocity_[vector2_x], 0, .20); //Applies 20% friction to object until we reach 0
+}
 #endregion
-	#region Gravity and Jumping
+	
+#region Gravity and Jumping
 	velocity_[vector2_y] += grav_;
 
 	//Move and contact tiles
@@ -76,7 +72,7 @@ if (has_control)
 		//Do nothing.
 	}
 	#endregion
-	#region Sprite Animations
+#region Sprite Animations
 	if (on_ground && x_input == 0 && dir == 1)
 	{
 		sprite_index = spr_player_idle_right;
@@ -181,7 +177,7 @@ if (has_control)
 		image_speed = 0.9;
 	}
 	#endregion
-	#region Launching Mechanic
+#region Launching Mechanic
 	/* Launching mechanic piece
 	if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
 	*/
@@ -259,11 +255,6 @@ if (has_control)
 	}
 
 	#endregion
-}
-else
-{
-	velocity_[vector2_x] = 0;
-}
 
 
 /* 
@@ -273,9 +264,3 @@ First we need a way to determine which way Arrowhead is facing through the move 
 
 Changing sprites based on movement.
 */
-
-
-
-
-
-

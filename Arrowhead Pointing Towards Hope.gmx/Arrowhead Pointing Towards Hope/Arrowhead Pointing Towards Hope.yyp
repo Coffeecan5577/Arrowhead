@@ -234,7 +234,7 @@
             "Key": "30a7313b-3159-41d7-acae-e466144655a6",
             "Value": {
                 "id": "27b723b8-4d95-482b-9b87-c2f8c0587563",
-                "resourcePath": "objects\\obj_lvl_end\\obj_lvl_end.yy",
+                "resourcePath": "objects\\obj_lvl_trigger\\obj_lvl_trigger.yy",
                 "resourceType": "GMObject"
             }
         },

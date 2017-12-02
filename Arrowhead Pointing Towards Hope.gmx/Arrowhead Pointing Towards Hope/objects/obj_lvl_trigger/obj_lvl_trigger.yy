@@ -2,7 +2,7 @@
     "id": "30a7313b-3159-41d7-acae-e466144655a6",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_lvl_end",
+    "name": "obj_lvl_trigger",
     "eventList": [
         {
             "id": "c481914c-cac0-4100-8cd9-2a7f85313d52",
@@ -32,5 +32,5 @@
     "physicsStartAwake": true,
     "solid": false,
     "spriteId": "402f7575-fb77-4cde-b23b-3e5542c2ea59",
-    "visible": true
+    "visible": false
 }

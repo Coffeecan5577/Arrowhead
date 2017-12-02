@@ -1,6 +1,11 @@
 /// @description initialize variables
 velocity_ = [0, 0];
 
+vector2_x = 0;
+vector2_y = 1;
+
+x_input = 0; // not moving by default.
+
 //position variables.
 var xpos = x;
 var ypos = y;

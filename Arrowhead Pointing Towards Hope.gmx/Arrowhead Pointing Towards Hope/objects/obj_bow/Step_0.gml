@@ -5,30 +5,11 @@ image_speed = 0.5;
 
 bow_collide = instance_place(x, y, obj_player);
 
+
+//TODO: 12/2/17 - Reworking bow collisions and sprites.
 if (bow_collide && keyboard_check(vk_shift))
 {
-	if (image_xscale == 1)
-	{
-		sprite_index = spr_bow_pull_right;
-		image_speed = 0;
-		with (other)
-		{
-			other.dir = 1;
-			other.sprite_index = spr_arrow_aim_right;
-			image_speed = 0;
-		}
-	}
-	else if (image_xscale == -1)
-	{
-		sprite_index = spr_bow_pull_left;
-		with (other)
-		{
-			other.dir = -1;
-			other.sprite_index = spr_arrow_aim_left;
-			image_speed = 0;
-		}
-		
-	}
+	
 }
 
 else

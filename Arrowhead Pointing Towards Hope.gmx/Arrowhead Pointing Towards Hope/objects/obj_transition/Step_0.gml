@@ -37,6 +37,11 @@ if (mode != TRANS_MODE.OFF)
 				game_restart(); 
 				break;
 			}
+			case TRANS_MODE.EXIT:
+			{
+				game_end();
+				break;
+			}
 		}
 	}
 }

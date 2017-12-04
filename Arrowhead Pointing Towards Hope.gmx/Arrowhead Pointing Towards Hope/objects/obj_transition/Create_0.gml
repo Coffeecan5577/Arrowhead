@@ -9,7 +9,8 @@ enum TRANS_MODE
 	NEXT,
 	GOTO,
 	RESTART,
-	INTRO
+	INTRO,
+	EXIT
 }
 mode = TRANS_MODE.INTRO;
 percent = 1; //value between 0 and 1 that determines how filled the screen is.

@@ -32,6 +32,14 @@ if (keyboard_check(vk_left)) && !(keyboard_check(vk_right))
 if (keyboard_check(vk_left)) && (keyboard_check(vk_right))
 {
 	velocity_[vector2_x] = 0;
+	if (dir == 1)
+	{
+		sprite_index = spr_player_idle_right;
+	}
+	else if (dir == -1)
+	{
+		sprite_index = spr_player_idle_left;
+	}
 }
 	
 //Applying friction
@@ -187,6 +195,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 
 	//1. Change the sprite, and move the player to the center of the bow sprite
 	//2. Change launch prep sprite based on bow direction. We will need a global variable.
+	/*
 	if (collision && keyboard_check(vk_lshift))
 	{
 		global.launch_prep = 1;
@@ -195,21 +204,29 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 			x = collision.x - 5;
 			y = collision.y + 1;
 			velocity_[vector2_x] = 0;
-			velocity_[vector2_y]= 0;	
+			velocity_[vector2_y]= 0;
+			sprite_index = spr_arrow_aim_right;
+			image_speed = 0;
+			if (keyboard_check(vk_left))
+			{
+				sprite_index = spr_arrow_aim_right; //Keep the sprite facing right if left is pressed.
+			}
 		}
 		else if (dir == -1)
 		{
 			x = collision.x + 5;
 			y = collision.y + 1;
 			velocity_[vector2_x] = 0;
-			velocity_[vector2_y] = 0;	
+			velocity_[vector2_y] = 0;
+			sprite_index = spr_arrow_aim_left;
+			image_speed = 0;
 		}
 	}
 	else
 	{
 		global.launch_prep = 0;
 	}
-
+	*/
 
 	/*
 	else if (collision && keyboard_check(vk_lshift) && collision.bow_pos == -1)

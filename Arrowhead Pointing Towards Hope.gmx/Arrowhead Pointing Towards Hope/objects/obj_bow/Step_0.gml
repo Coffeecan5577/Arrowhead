@@ -1,15 +1,34 @@
 //Change animation speed
 image_speed = 0.5;
 
+//Setting up direction change.
+if (dir == -1)
+{
+	image_xscale = -1;
+}
+else
+{
+	dir = 1;
+}
+
 //Setting up a instance_place collision variable.
 
-bow_collide = instance_place(x, y, obj_player);
+var bow_collide = instance_place(x, y, obj_player); //Detects collisions
 
 
 //TODO: 12/2/17 - Reworking bow collisions and sprites.
 if (bow_collide && keyboard_check(vk_shift))
 {
-	
+	if (dir == 1)
+	{
+		sprite_index = spr_bow_pull_right;
+		image_speed = 0;
+	}
+	else if (dir == -1)
+	{
+		sprite_index = spr_bow_pull_left;
+		image_speed = 0;
+	}
 }
 
 else

@@ -12,7 +12,19 @@ if (paused)
 {
 	instance_deactivate_all(1);
 	//Menu option preparation
-	if (menu_control)
+}
+
+else
+{
+	if (sprite_exists(screenshot))
+	{
+		sprite_delete(screenshot);
+	}
+	instance_activate_all();
+	menu_control = false;
+}
+
+if (menu_control)
 	{
 		if (keyboard_check_pressed(vk_up))
 		{
@@ -64,17 +76,6 @@ if (paused)
 			}
 		}
 	}
-}
-
-else
-{
-	if (sprite_exists(screenshot))
-	{
-		sprite_delete(screenshot);
-	}
-	instance_activate_all();
-	menu_control = false;
-}
 
 
 

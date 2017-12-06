@@ -1,12 +1,4 @@
 /// @desc Get Player's Input:
-/*Gamepad button names
-gpad_A = gp_face1;
-gpad_B = gp_face2;
-gpad_X = gp_face3;
-gpad_y = gp_face4;
-gpad_RT = gp_shoulderr;
-*/
-
 
 #region Player Input
 //If we have control of the player
@@ -80,6 +72,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 		//Do nothing.
 	}
 	#endregion
+
 #region Sprite Animations
 	if (on_ground && x_input == 0 && dir == 1)
 	{
@@ -185,6 +178,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 		image_speed = 0.9;
 	}
 	#endregion
+
 #region Launching Mechanic
 	/* Launching mechanic piece
 	if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
@@ -195,11 +189,11 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 
 	//1. Change the sprite, and move the player to the center of the bow sprite
 	//2. Change launch prep sprite based on bow direction. We will need a global variable.
-	/*
+	
 	if (collision && keyboard_check(vk_lshift))
 	{
 		global.launch_prep = 1;
-		if (dir == 1)
+		if (obj_bow.dir == 1) //Referencing the other object in collision
 		{
 			x = collision.x - 5;
 			y = collision.y + 1;
@@ -212,7 +206,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 				sprite_index = spr_arrow_aim_right; //Keep the sprite facing right if left is pressed.
 			}
 		}
-		else if (dir == -1)
+		else if (obj_bow.dir == -1)
 		{
 			x = collision.x + 5;
 			y = collision.y + 1;
@@ -220,26 +214,17 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 			velocity_[vector2_y] = 0;
 			sprite_index = spr_arrow_aim_left;
 			image_speed = 0;
+			if (keyboard_check(vk_right))
+			{
+				sprite_index = spr_arrow_aim_left; //Keep the sprite facing left if right is pressed.
+			}
 		}
 	}
 	else
 	{
 		global.launch_prep = 0;
 	}
-	*/
 
-	/*
-	else if (collision && keyboard_check(vk_lshift) && collision.bow_pos == -1)
-	{
-		x = collision.x + 5;
-		y = collision.y + 1;
-		sprite_index = spr_arrow_aim_left;
-		image_speed = 0;
-		velocity_[vector2_x] = 0;
-		velocity_[vector2_y]= 0;
-		
-	}
-	*/
 
 	//We want all of the sprites to change based on the value of the power meter.
 	//Since that is a global variable, that should be relatively easy to do.
@@ -273,11 +258,11 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 
 	#endregion
 
-
-/* 
-Double jumps are a possibility later on.
-sprite animation section:
-First we need a way to determine which way Arrowhead is facing through the move variable.
-
-Changing sprites based on movement.
-*/
+#region Implementing Death
+if (y >= room_height) //If we fall below the level boundary
+{
+	instance_destroy(); // Destroy the player
+	//Play death sound effect.
+	alarm[0] = room_speed * 3; //Start the timer
+}
+#endregion

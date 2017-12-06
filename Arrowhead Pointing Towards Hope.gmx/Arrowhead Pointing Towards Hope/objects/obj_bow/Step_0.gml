@@ -2,13 +2,13 @@
 image_speed = 0.5;
 
 //Setting up direction change.
-if (dir == -1)
+if (dir == 1)
 {
-	image_xscale = -1;
+	image_xscale = 1;
 }
-else
+else if (dir == -1)
 {
-	dir = 1;
+	image_xscale = -1;	
 }
 
 //Setting up a instance_place collision variable.

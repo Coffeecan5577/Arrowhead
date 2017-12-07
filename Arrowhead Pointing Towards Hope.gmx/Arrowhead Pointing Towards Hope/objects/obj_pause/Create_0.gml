@@ -1,4 +1,6 @@
-/// @desc initailize variables
+/// @desc initailize variables\
+
+/*
 paused = false;
 screenshot = -1;
 
@@ -21,3 +23,4 @@ menu[0] = "Back to Title";
 
 menu_items = array_length_1d(menu);
 menu_cursor = 2; //option selected by default on menu
+*/

@@ -1,4 +1,6 @@
 /// @desc Setup pausing
+
+/*
 if (keyboard_check_pressed(vk_escape))
 {
 	paused = !paused;
@@ -78,5 +80,5 @@ if (menu_control)
 	}
 
 
-
+*/
 

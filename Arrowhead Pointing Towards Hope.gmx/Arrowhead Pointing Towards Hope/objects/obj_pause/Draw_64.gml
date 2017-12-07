@@ -1,5 +1,6 @@
 /// @desc Draw screenshot
 
+/*
 draw_set_font(fnt_menu);
 draw_set_halign(fa_middle);
 draw_set_valign(fa_top); //Draw the text to the top middle of the screen
@@ -33,3 +34,4 @@ if (paused == true)
 		draw_text(xx, yy, txt);
 	}	
 }
+*/

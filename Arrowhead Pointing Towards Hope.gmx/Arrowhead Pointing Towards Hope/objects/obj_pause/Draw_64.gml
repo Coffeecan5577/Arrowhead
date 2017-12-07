@@ -5,9 +5,9 @@ draw_set_halign(fa_middle);
 draw_set_valign(fa_top); //Draw the text to the top middle of the screen
 
 
-if (paused)
+if (paused == true)
 {
-	draw_sprite_ext(screenshot, view_wport, view_hport, 0, 1, 1, 0, c_white, .50);
+	draw_sprite_ext(screenshot, 0, view_wport, view_hport, 1, 1, 0, c_white, 1);
 	for (var i = 0; i < menu_items; i++)
 	{
 		var offset = 2;

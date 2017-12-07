@@ -1,1 +1,1 @@
-scr_slide_transition(TRANS_MODE.RESTART); //We can use this enum thanks to them being global in scope.
+scr_slide_transition(TRANS_MODE.RESTART_LEVEL); //We can use this enum thanks to them being global in scope.

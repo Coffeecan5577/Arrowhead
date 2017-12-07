@@ -32,9 +32,14 @@ if (mode != TRANS_MODE.OFF)
 				room_goto(target); //Go to a specific room, or the next one
 				break;
 			}
-			case TRANS_MODE.RESTART:
+			case TRANS_MODE.RESTART_GAME:
 			{
 				game_restart(); 
+				break;
+			}
+			case TRANS_MODE.RESTART_LEVEL:
+			{
+				room_restart();
 				break;
 			}
 			case TRANS_MODE.EXIT:

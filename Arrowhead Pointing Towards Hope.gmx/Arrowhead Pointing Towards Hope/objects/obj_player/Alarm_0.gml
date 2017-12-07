@@ -14,5 +14,5 @@ if (audio_is_playing(snd_death_jingle))
 }
 else
 {
-	scr_slide_transition(TRANS_MODE.RESTART); //Restart the current level.
+	scr_slide_transition(TRANS_MODE.RESTART_LEVEL); //Restart the current level.
 }

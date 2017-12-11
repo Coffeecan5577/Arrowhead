@@ -179,7 +179,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 	}
 	#endregion
 
-#region Launching Mechanic
+#region Prepping for Launch
 	/* Launching mechanic piece
 	if Arrowhead is within 10 pixels on either side of a bow, and RT or shift is pressed, call a script.
 	*/
@@ -259,6 +259,62 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 
 	#endregion
 
+#region Launching from a Bow
+
+// 1.If we press space when prepped for launch
+// 2. Apply power meter value to both velocities
+// 3. Change sprite to launched_left or right based on direction
+// 4. If we are in the air, do not give control back until we hit the ground.
+
+//Setting up angle variables for clamping.
+var arrow_rotate_left = clamp(image_angle, 135, 270);
+
+if (global.launch_prep == 1 && keyboard_check_pressed(vk_space)) //Calculating velocities.
+{
+	velocity_[vector2_x] = acceleration_ * dir * global.launch_power; 
+	velocity_[vector2_y] = -jump_speed_ * global.launch_power;
+	global.arrow_launch = 1;
+}
+
+/*
+if (global.arrow_launch == 1 && !on_ground) //If we are in the air and have not touched the ground.
+{
+	var no_control = 1;
+	if (dir == 1)
+	{
+		sprite_index = spr_arrow_launch_right;
+		image_speed = 0;
+		image_angle = 45; //Start at 45 degrees if facing right.
+	}
+	else if (dir == -1)
+	{
+		sprite_index = spr_arrow_launch_left;
+		iamge_speed = 0;
+		image_angle = arrow_rotate_left; //Start at 135 if facing right.
+	}
+}
+*/
+/*Now for rotating the sprite while in the air.
+if (global.arrow_launch == 1 && dir == 1)
+{
+	image_angle -= 1;
+	if (image_angle <= 270)
+	{
+		image_angle = 270;
+	}
+}
+else if (global.arrow_launch == 1 && dir == -1)
+{
+	image_angle += 1;
+	if (image_angle >= 270)
+	{
+		image_angle = 270;
+	}
+}
+
+*/
+
+#endregion
 #region Implementing Death
 if (y >= room_height) //If we fall below the level boundary
 {

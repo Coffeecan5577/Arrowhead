@@ -18,7 +18,7 @@ if (keyboard_check_released(vk_lshift) && instance_exists(self))
 
 if (global.arrow_launch == 1)
 {
-	instance_destroy(self);
+	instance_destroy();
 	instance_destroy(obj_manage_launch_sprites);
 }
 

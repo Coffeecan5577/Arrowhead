@@ -74,7 +74,7 @@
             "Key": "11f0655f-838c-44fc-b252-8499efd29f69",
             "Value": {
                 "id": "fc96cc9b-6b60-4442-a8bf-19d52e17f5b0",
-                "resourcePath": "objects\\obj_bow\\obj_bow.yy",
+                "resourcePath": "objects\\obj_bow_right\\obj_bow_right.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -147,6 +147,14 @@
             "Value": {
                 "id": "d22d4337-f50d-4b51-bdaf-435b4ba33207",
                 "resourcePath": "objects\\obj_pause\\obj_pause.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "20511f95-a768-4e2a-b0e6-f1763e3cf913",
+            "Value": {
+                "id": "43ccac40-1334-4441-9559-f611fedc540e",
+                "resourcePath": "objects\\obj_bow_left\\obj_bow_left.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -519,6 +527,14 @@
             }
         },
         {
+            "Key": "6c884733-3e12-4286-a036-34883417b6a3",
+            "Value": {
+                "id": "b097eec7-5720-4fe9-8f75-f5b4b20bd553",
+                "resourcePath": "sprites\\spr_bow_idle_left\\spr_bow_idle_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6e956204-f6e9-42ed-9ba3-0c8e322b4cfe",
             "Value": {
                 "id": "112c771a-bf51-4447-8b16-787125a451c4",
@@ -642,7 +658,7 @@
             "Key": "8568fd02-f414-4ede-89b5-5a0b544c6114",
             "Value": {
                 "id": "7fcdad0e-6efb-4985-b5c3-581b49408264",
-                "resourcePath": "sprites\\spr_bow_idle\\spr_bow_idle.yy",
+                "resourcePath": "sprites\\spr_bow_idle_right\\spr_bow_idle_right.yy",
                 "resourceType": "GMSprite"
             }
         },

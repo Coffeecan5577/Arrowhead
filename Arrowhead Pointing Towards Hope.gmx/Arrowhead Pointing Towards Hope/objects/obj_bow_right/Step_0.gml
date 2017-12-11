@@ -1,45 +1,27 @@
+#region Setting up local variables.
 //Change animation speed
 image_speed = 0.5;
 
-//Setting up direction change.
-if (dir == 1)
-{
-	image_xscale = 1;
-}
-else if (dir == -1)
-{
-	image_xscale = -1;	
-}
-
 //Setting up a instance_place collision variable.
-
 var bow_collide = instance_place(x, y, obj_player); //Detects collisions
+#endregion
 
-
-//TODO: 12/2/17 - Reworking bow collisions and sprites.
-if (bow_collide && keyboard_check(vk_shift))
+#region Detecting direction collision
+if (bow_collide && keyboard_check(vk_lshift))
 {
-	if (dir == 1)
-	{
-		sprite_index = spr_bow_pull_right;
-		image_speed = 0;
-	}
-	else if (dir == -1)
-	{
-		sprite_index = spr_bow_pull_left;
-		image_speed = 0;
-	}
+	sprite_index = spr_bow_pull_right;
+	image_speed = 0;
 }
-
 else
 {
-	sprite_index = spr_bow_idle;
+	sprite_index = spr_bow_idle_right;
 }
+#endregion
 
-
+#region Calculating launch power
 if (instance_exists(obj_power_meter))
 {
-	if (sprite_index == spr_bow_pull_left || sprite_index == spr_bow_pull_right)
+	if (sprite_index == spr_bow_pull_right)
 	{
 		if (global.launch_power == 1.10)
 		{
@@ -59,4 +41,5 @@ if (instance_exists(obj_power_meter))
 		}
 	}
 }
+#endregion
 

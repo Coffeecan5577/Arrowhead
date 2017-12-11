@@ -7,7 +7,8 @@
         "8568fd02-f414-4ede-89b5-5a0b544c6114",
         "6ee804d8-644c-437f-9434-d3cf6199715a",
         "b0900d3a-b8f8-4324-b526-bebb81536b15",
-        "9ce80b73-4cc2-40ab-94eb-ffebe3b3b0c7"
+        "9ce80b73-4cc2-40ab-94eb-ffebe3b3b0c7",
+        "6c884733-3e12-4286-a036-34883417b6a3"
     ],
     "filterType": "GMSprite",
     "folderName": "Bow Sprites",

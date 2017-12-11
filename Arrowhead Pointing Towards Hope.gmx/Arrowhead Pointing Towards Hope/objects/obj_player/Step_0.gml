@@ -185,39 +185,40 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 	*/
 
 	//Setting up a collision variable
-	var collision = instance_place(x, y, obj_bow);
+	var collision_right = instance_place(x, y, obj_bow_right);
+	var collision_left = instance_place(x, y, obj_bow_left);
 
 	//1. Change the sprite, and move the player to the center of the bow sprite
 	//2. Change launch prep sprite based on bow direction. We will need a global variable.
 	
-	if (collision && keyboard_check(vk_lshift))
+	if (collision_right && keyboard_check(vk_lshift))
 	{
+		dir = 1;
 		global.launch_prep = 1;
-		if (obj_bow.dir == 1) //Referencing the other object in collision
+		x = collision_right.x - 5;
+		y = collision_right.y + 1;
+		velocity_[vector2_x] = 0;
+		velocity_[vector2_y]= 0;
+		sprite_index = spr_arrow_aim_right;
+		image_speed = 0;
+		if (keyboard_check(vk_left))
 		{
-			x = collision.x - 5;
-			y = collision.y + 1;
-			velocity_[vector2_x] = 0;
-			velocity_[vector2_y]= 0;
-			sprite_index = spr_arrow_aim_right;
-			image_speed = 0;
-			if (keyboard_check(vk_left))
-			{
-				sprite_index = spr_arrow_aim_right; //Keep the sprite facing right if left is pressed.
-			}
+			sprite_index = spr_arrow_aim_right; //Keep the sprite facing right if left is pressed.
 		}
-		else if (obj_bow.dir == -1)
+	}
+	else if (collision_left && keyboard_check(vk_lshift))
+	{
+		dir = -1;
+		global.launch_prep = 1;
+		x = collision_left.x + 5;
+		y = collision_left.y + 1;
+		velocity_[vector2_x] = 0;
+		velocity_[vector2_y] = 0;
+		sprite_index = spr_arrow_aim_left;
+		image_speed = 0;
+		if (keyboard_check(vk_right))
 		{
-			x = collision.x + 5;
-			y = collision.y + 1;
-			velocity_[vector2_x] = 0;
-			velocity_[vector2_y] = 0;
-			sprite_index = spr_arrow_aim_left;
-			image_speed = 0;
-			if (keyboard_check(vk_right))
-			{
-				sprite_index = spr_arrow_aim_left; //Keep the sprite facing left if right is pressed.
-			}
+			sprite_index = spr_arrow_aim_left; //Keep the sprite facing left if right is pressed.
 		}
 	}
 	else

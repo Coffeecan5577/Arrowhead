@@ -9,7 +9,6 @@ max_velocity_ = [choose(5, 9), 32]; //Randomly sets a horizontal speed for each 
 acceleration_ = choose(.70, 1.15);
 dir = 1; //facing right by default. This helps determine sprite animations.
 
-
 //Get tile_map_id
 var layer_id = layer_get_id("world_1_tiles");
 collision_tile_map_id_ = layer_tilemap_get_id(layer_id);

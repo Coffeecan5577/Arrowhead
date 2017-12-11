@@ -2,7 +2,7 @@
     "id": "8568fd02-f414-4ede-89b5-5a0b544c6114",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_bow_idle",
+    "name": "spr_bow_idle_right",
     "For3D": false,
     "HTile": false,
     "VTile": false,

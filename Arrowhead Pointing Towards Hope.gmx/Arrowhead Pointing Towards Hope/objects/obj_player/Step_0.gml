@@ -43,7 +43,14 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 #endregion
 	
 #region Gravity and Jumping
+if (global.arrow_launch == 0)
+{
 	velocity_[vector2_y] += grav_;
+}
+else
+{
+	velocity_[vector2_y] = (-jump_speed_ * global.launch_power);
+}
 
 	//Move and contact tiles
 	move_and_contact_tiles(collision_tile_map_id_, 32, velocity_);
@@ -52,6 +59,8 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 	var on_ground =  tile_collide_at_points(collision_tile_map_id_, [bbox_left, bbox_bottom], [bbox_right - 1, bbox_bottom]);
 	if (on_ground)
 	{
+		global.arrow_launch = 0;
+		num_of_jumps = 1;
 		if (keyboard_check_pressed(vk_space))
 		{
 			velocity_[vector2_y] = -jump_speed_;
@@ -203,6 +212,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 		image_speed = 0;
 		if (keyboard_check(vk_left))
 		{
+			dir = 1; //Keep the direction 1
 			sprite_index = spr_arrow_aim_right; //Keep the sprite facing right if left is pressed.
 		}
 	}
@@ -218,6 +228,7 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 		image_speed = 0;
 		if (keyboard_check(vk_right))
 		{
+			dir = -1; //Same for this if we are prepped for launch.
 			sprite_index = spr_arrow_aim_left; //Keep the sprite facing left if right is pressed.
 		}
 	}
@@ -267,19 +278,19 @@ if (x_input == 0 && velocity_[vector2_x] > 0 || velocity_[vector2_x] < 0)
 // 4. If we are in the air, do not give control back until we hit the ground.
 
 //Setting up angle variables for clamping.
-var arrow_rotate_left = clamp(image_angle, 135, 270);
 
 if (global.launch_prep == 1 && keyboard_check_pressed(vk_space)) //Calculating velocities.
 {
-	velocity_[vector2_x] = acceleration_ * dir * global.launch_power; 
-	velocity_[vector2_y] = -jump_speed_ * global.launch_power;
+	global.launch_prep = 0;
 	global.arrow_launch = 1;
 }
 
-/*
-if (global.arrow_launch == 1 && !on_ground) //If we are in the air and have not touched the ground.
+
+if (global.arrow_launch == 1) //If we are in the air
 {
-	var no_control = 1;
+	velocity_[vector2_x] = 7 * dir * global.launch_power;
+	/*
+	var no_control = true;
 	if (dir == 1)
 	{
 		sprite_index = spr_arrow_launch_right;
@@ -289,11 +300,16 @@ if (global.arrow_launch == 1 && !on_ground) //If we are in the air and have not 
 	else if (dir == -1)
 	{
 		sprite_index = spr_arrow_launch_left;
-		iamge_speed = 0;
-		image_angle = arrow_rotate_left; //Start at 135 if facing right.
+		image_speed = 0;
+		image_angle = 135; //Start at 135 if facing right.
 	}
+	*/
 }
-*/
+else
+{
+	image_angle = 0;
+}
+
 /*Now for rotating the sprite while in the air.
 if (global.arrow_launch == 1 && dir == 1)
 {

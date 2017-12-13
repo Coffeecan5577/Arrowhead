@@ -42,10 +42,3 @@ if (instance_exists(obj_power_meter))
 	}
 }
 #endregion
-
-#region changing Sprites after launching
-if (global.arrow_launch == 1)
-{
-	sprite_index = spr_bow_idle_right;
-}
-#endregion
